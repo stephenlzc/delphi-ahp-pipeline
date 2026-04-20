@@ -15,13 +15,13 @@
 **macOS / Linux**（打开终端，输入以下命令回车）：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/stephenlzc/DelphiAHPFlow/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/stephenlzc/delphi-ahp-pipeline/main/install.sh | bash
 ```
 
 **Windows**（打开 PowerShell，输入以下命令回车）：
 
 ```powershell
-irm https://raw.githubusercontent.com/stephenlzc/DelphiAHPFlow/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/stephenlzc/delphi-ahp-pipeline/main/install.ps1 | iex
 ```
 
 ---

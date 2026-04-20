@@ -1,10 +1,10 @@
 # Delphi-AHP Pipeline Installer (Windows)
 #
 # Usage:
-#   irm https://raw.githubusercontent.com/stephenlzc/DelphiAHPFlow/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/stephenlzc/delphi-ahp-pipeline/main/install.ps1 | iex
 #
 # Or download and run:
-#   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/stephenlzc/DelphiAHPFlow/main/install.ps1" -OutFile install.ps1; .\install.ps1
+#   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/stephenlzc/delphi-ahp-pipeline/main/install.ps1" -OutFile install.ps1; .\install.ps1
 #
 
 $SCRIPT_DIR = $PSScriptRoot

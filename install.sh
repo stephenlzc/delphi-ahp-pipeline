@@ -3,7 +3,7 @@
 # Delphi-AHP Pipeline Installer (macOS / Linux)
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/stephenlzc/DelphiAHPFlow/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/stephenlzc/delphi-ahp-pipeline/main/install.sh | bash
 #
 set -e
 

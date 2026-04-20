@@ -28,7 +28,7 @@
 
 3. 粘贴以下命令，按回车：
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/stephenlzc/DelphiAHPFlow/main/install.sh | bash
+   curl -fsSL https://raw.githubusercontent.com/stephenlzc/delphi-ahp-pipeline/main/install.sh | bash
    ```
 
 4. 等待出现"Installation Complete"即安装成功。
@@ -46,7 +46,7 @@
 
 3. 粘贴以下命令，按回车：
    ```powershell
-   irm https://raw.githubusercontent.com/stephenlzc/DelphiAHPFlow/main/install.ps1 | iex
+   irm https://raw.githubusercontent.com/stephenlzc/delphi-ahp-pipeline/main/install.ps1 | iex
    ```
 
 4. 等待出现"Installation Complete"即安装成功。
