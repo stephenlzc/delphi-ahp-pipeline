@@ -9,7 +9,7 @@
 打开 GitHub 页面，点击右上角 **Code** → **Download ZIP**，将文件解压到你喜欢的位置（记住这个文件夹路径）。
 
 或者直接点击下载：
-[Download Delphi-AHP Pipeline](https://github.com/stephenlzc/DelphiAHPFlow/archive/refs/heads/main.zip)
+[Download Delphi-AHP Pipeline](https://github.com/stephenlzc/delphi-ahp-pipeline/archive/refs/heads/main.zip)
 
 ---
 
