@@ -1,0 +1,15 @@
+{
+  "round_1": {
+    "turns": 1
+  },
+  "round_2": {
+    "scoring_dimensions": []
+  },
+  "convergence_threshold": 0.5,
+  "max_rounds": 2,
+  "interview_dynamics": {
+    "max_turns_per_expert": 5,
+    "min_follow_ups_per_topic": 2,
+    "max_follow_ups_per_topic": 3
+  }
+}

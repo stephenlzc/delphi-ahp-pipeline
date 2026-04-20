@@ -1,0 +1,286 @@
+{
+  "criteria": [
+    {
+      "id": "C01",
+      "name": "需求特征与匹配性",
+      "weight": 0.5245,
+      "lambda_max": 4.3772,
+      "ci": 0.1257,
+      "cr": 0.1397,
+      "consistency_passed": false
+    },
+    {
+      "id": "C02",
+      "name": "运营效率与经济性",
+      "weight": 0.2423,
+      "lambda_max": 4.3772,
+      "ci": 0.1257,
+      "cr": 0.1397,
+      "consistency_passed": false
+    },
+    {
+      "id": "C03",
+      "name": "资源约束与供给能力",
+      "weight": 0.1649,
+      "lambda_max": 4.3772,
+      "ci": 0.1257,
+      "cr": 0.1397,
+      "consistency_passed": false
+    },
+    {
+      "id": "C04",
+      "name": "研究创新与决策支撑",
+      "weight": 0.0683,
+      "lambda_max": 4.3772,
+      "ci": 0.1257,
+      "cr": 0.1397,
+      "consistency_passed": false
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "F01",
+      "name": "需求时空分布动态性",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.1183,
+      "raw_score": 0.2256
+    },
+    {
+      "id": "F02",
+      "name": "设备利用率峰谷差",
+      "belongs_to_criteria": "C02",
+      "combined_weight": 0.1062,
+      "raw_score": 0.4381
+    },
+    {
+      "id": "F03",
+      "name": "选址与需求匹配度",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.1493,
+      "raw_score": 0.2846
+    },
+    {
+      "id": "F04",
+      "name": "投资回收周期",
+      "belongs_to_criteria": "C02",
+      "combined_weight": 0.0795,
+      "raw_score": 0.3281
+    },
+    {
+      "id": "F05",
+      "name": "用户时间成本",
+      "belongs_to_criteria": "C02",
+      "combined_weight": 0.0367,
+      "raw_score": 0.1513
+    },
+    {
+      "id": "F06",
+      "name": "站点类型差异化特征",
+      "belongs_to_criteria": "C02",
+      "combined_weight": 0.02,
+      "raw_score": 0.0825
+    },
+    {
+      "id": "F07",
+      "name": "调控机制有效性",
+      "belongs_to_criteria": "C1",
+      "combined_weight": 0.0,
+      "raw_score": 0.0
+    },
+    {
+      "id": "F08",
+      "name": "产学研合作能力",
+      "belongs_to_criteria": "C04",
+      "combined_weight": 0.0214,
+      "raw_score": 0.3131
+    },
+    {
+      "id": "F09",
+      "name": "多源数据融合能力",
+      "belongs_to_criteria": "C04",
+      "combined_weight": 0.0165,
+      "raw_score": 0.2411
+    },
+    {
+      "id": "F10",
+      "name": "创新模型构建能力",
+      "belongs_to_criteria": "C04",
+      "combined_weight": 0.0155,
+      "raw_score": 0.2275
+    },
+    {
+      "id": "F11",
+      "name": "实证案例研究能力",
+      "belongs_to_criteria": "C04",
+      "combined_weight": 0.0068,
+      "raw_score": 0.0997
+    },
+    {
+      "id": "F12",
+      "name": "政策洞察与建议能力",
+      "belongs_to_criteria": "C04",
+      "combined_weight": 0.0081,
+      "raw_score": 0.1186
+    },
+    {
+      "id": "F13",
+      "name": "需求时空波动性",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.081,
+      "raw_score": 0.1544
+    },
+    {
+      "id": "F14",
+      "name": "城市锚点依赖度",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.0679,
+      "raw_score": 0.1294
+    },
+    {
+      "id": "F15",
+      "name": "边缘里程焦虑效应",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.0323,
+      "raw_score": 0.0616
+    },
+    {
+      "id": "F16",
+      "name": "车桩时空耦合度",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.0452,
+      "raw_score": 0.0861
+    },
+    {
+      "id": "F17",
+      "name": "有效需求转化率",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.0306,
+      "raw_score": 0.0584
+    },
+    {
+      "id": "F18",
+      "name": "区域电网承载力",
+      "belongs_to_criteria": "C03",
+      "combined_weight": 0.1333,
+      "raw_score": 0.8083
+    },
+    {
+      "id": "F19",
+      "name": "有效供给真实度",
+      "belongs_to_criteria": "C03",
+      "combined_weight": 0.0316,
+      "raw_score": 0.1917
+    }
+  ],
+  "criteria_consistency": {
+    "lambda_max": 4.3772,
+    "ci": 0.1257,
+    "cr": 0.1397,
+    "passed": false
+  },
+  "consistency_guidance": {
+    "message": "准则层一致性比例 CR=0.1397 > 0.10，一致性检验未通过。以下是优先调整建议：",
+    "suggestions": [
+      "  • 需求特征与匹配性 vs 运营效率与经济性: 当前值 3.98 → 建议调整为 2.16 (减小，与其他判断更一致)",
+      "  • 资源约束与供给能力 vs 研究创新与决策支撑: 当前值 4.33 → 建议调整为 2.42 (减小，与其他判断更一致)",
+      "  • 运营效率与经济性 vs 资源约束与供给能力: 当前值 2.41 → 建议调整为 1.47 (减小，与其他判断更一致)"
+    ]
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "id": "F03",
+      "weight": 0.1493
+    },
+    {
+      "rank": 2,
+      "id": "F18",
+      "weight": 0.1333
+    },
+    {
+      "rank": 3,
+      "id": "F01",
+      "weight": 0.1183
+    },
+    {
+      "rank": 4,
+      "id": "F02",
+      "weight": 0.1062
+    },
+    {
+      "rank": 5,
+      "id": "F13",
+      "weight": 0.081
+    },
+    {
+      "rank": 6,
+      "id": "F04",
+      "weight": 0.0795
+    },
+    {
+      "rank": 7,
+      "id": "F14",
+      "weight": 0.0679
+    },
+    {
+      "rank": 8,
+      "id": "F16",
+      "weight": 0.0452
+    },
+    {
+      "rank": 9,
+      "id": "F05",
+      "weight": 0.0367
+    },
+    {
+      "rank": 10,
+      "id": "F15",
+      "weight": 0.0323
+    },
+    {
+      "rank": 11,
+      "id": "F19",
+      "weight": 0.0316
+    },
+    {
+      "rank": 12,
+      "id": "F17",
+      "weight": 0.0306
+    },
+    {
+      "rank": 13,
+      "id": "F08",
+      "weight": 0.0214
+    },
+    {
+      "rank": 14,
+      "id": "F06",
+      "weight": 0.02
+    },
+    {
+      "rank": 15,
+      "id": "F09",
+      "weight": 0.0165
+    },
+    {
+      "rank": 16,
+      "id": "F10",
+      "weight": 0.0155
+    },
+    {
+      "rank": 17,
+      "id": "F12",
+      "weight": 0.0081
+    },
+    {
+      "rank": 18,
+      "id": "F11",
+      "weight": 0.0068
+    },
+    {
+      "rank": 19,
+      "id": "F07",
+      "weight": 0.0
+    }
+  ]
+}

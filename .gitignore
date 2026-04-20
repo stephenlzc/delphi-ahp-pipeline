@@ -1,0 +1,38 @@
+# Project docs (not needed in repo)
+AGENTS.md
+CLAUDE.md
+
+# Run results (intermediate data)
+run_result/
+test_result/
+
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# Downloaded packages
+*.zip
+
+# OMX directory
+.omx/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local

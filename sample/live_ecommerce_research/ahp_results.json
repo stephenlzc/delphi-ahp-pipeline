@@ -1,0 +1,285 @@
+{
+  "criteria": [
+    {
+      "id": "C01",
+      "name": "主播专业可信",
+      "weight": 0.3444,
+      "lambda_max": 6.4786,
+      "ci": 0.0957,
+      "cr": 0.0772,
+      "consistency_passed": true
+    },
+    {
+      "id": "C02",
+      "name": "信息透明披露",
+      "weight": 0.2486,
+      "lambda_max": 6.4786,
+      "ci": 0.0957,
+      "cr": 0.0772,
+      "consistency_passed": true
+    },
+    {
+      "id": "C03",
+      "name": "互动回应质量",
+      "weight": 0.1118,
+      "lambda_max": 6.4786,
+      "ci": 0.0957,
+      "cr": 0.0772,
+      "consistency_passed": true
+    },
+    {
+      "id": "C04",
+      "name": "体验承诺一致",
+      "weight": 0.1761,
+      "lambda_max": 6.4786,
+      "ci": 0.0957,
+      "cr": 0.0772,
+      "consistency_passed": true
+    },
+    {
+      "id": "C05",
+      "name": "运营治理能力",
+      "weight": 0.0577,
+      "lambda_max": 6.4786,
+      "ci": 0.0957,
+      "cr": 0.0772,
+      "consistency_passed": true
+    },
+    {
+      "id": "C06",
+      "name": "长期信任资本",
+      "weight": 0.0614,
+      "lambda_max": 6.4786,
+      "ci": 0.0957,
+      "cr": 0.0772,
+      "consistency_passed": true
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "F01",
+      "name": "专业可信度",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.1722,
+      "raw_score": 0.5
+    },
+    {
+      "id": "F02",
+      "name": "信息透明度",
+      "belongs_to_criteria": "C02",
+      "combined_weight": 0.0984,
+      "raw_score": 0.3959
+    },
+    {
+      "id": "F03",
+      "name": "局限性承认",
+      "belongs_to_criteria": "C02",
+      "combined_weight": 0.0682,
+      "raw_score": 0.2745
+    },
+    {
+      "id": "F04",
+      "name": "即时反馈质量",
+      "belongs_to_criteria": "C03",
+      "combined_weight": 0.0651,
+      "raw_score": 0.5817
+    },
+    {
+      "id": "F05",
+      "name": "情感互动强度",
+      "belongs_to_criteria": "C03",
+      "combined_weight": 0.0218,
+      "raw_score": 0.1951
+    },
+    {
+      "id": "F06",
+      "name": "承诺体验一致性",
+      "belongs_to_criteria": "C04",
+      "combined_weight": 0.0985,
+      "raw_score": 0.5592
+    },
+    {
+      "id": "F07",
+      "name": "售后兑现能力",
+      "belongs_to_criteria": "C04",
+      "combined_weight": 0.0559,
+      "raw_score": 0.3172
+    },
+    {
+      "id": "F08",
+      "name": "选品稳定性",
+      "belongs_to_criteria": "C05",
+      "combined_weight": 0.0144,
+      "raw_score": 0.2497
+    },
+    {
+      "id": "F09",
+      "name": "信任资本积累",
+      "belongs_to_criteria": "C06",
+      "combined_weight": 0.0452,
+      "raw_score": 0.7366
+    },
+    {
+      "id": "F10",
+      "name": "外部性影响",
+      "belongs_to_criteria": "C06",
+      "combined_weight": 0.0115,
+      "raw_score": 0.1874
+    },
+    {
+      "id": "F11",
+      "name": "资源配置导向",
+      "belongs_to_criteria": "C06",
+      "combined_weight": 0.0047,
+      "raw_score": 0.076
+    },
+    {
+      "id": "F12",
+      "name": "机制创新能力",
+      "belongs_to_criteria": "C05",
+      "combined_weight": 0.0154,
+      "raw_score": 0.2675
+    },
+    {
+      "id": "F13",
+      "name": "责任可追溯性",
+      "belongs_to_criteria": "C05",
+      "combined_weight": 0.0135,
+      "raw_score": 0.2331
+    },
+    {
+      "id": "F14",
+      "name": "信息披露规范性",
+      "belongs_to_criteria": "C02",
+      "combined_weight": 0.0819,
+      "raw_score": 0.3296
+    },
+    {
+      "id": "F15",
+      "name": "风险分类管理",
+      "belongs_to_criteria": "C05",
+      "combined_weight": 0.0144,
+      "raw_score": 0.2497
+    },
+    {
+      "id": "F16",
+      "name": "专业知识展示",
+      "belongs_to_criteria": "C01",
+      "combined_weight": 0.1722,
+      "raw_score": 0.5
+    },
+    {
+      "id": "F17",
+      "name": "个人使用体验",
+      "belongs_to_criteria": "C04",
+      "combined_weight": 0.0218,
+      "raw_score": 0.1235
+    },
+    {
+      "id": "F18",
+      "name": "互动反馈机制",
+      "belongs_to_criteria": "C03",
+      "combined_weight": 0.025,
+      "raw_score": 0.2232
+    }
+  ],
+  "criteria_consistency": {
+    "lambda_max": 6.4786,
+    "ci": 0.0957,
+    "cr": 0.0772,
+    "passed": true
+  },
+  "consistency_guidance": null,
+  "ranking": [
+    {
+      "rank": 1,
+      "id": "F01",
+      "weight": 0.1722
+    },
+    {
+      "rank": 2,
+      "id": "F16",
+      "weight": 0.1722
+    },
+    {
+      "rank": 3,
+      "id": "F06",
+      "weight": 0.0985
+    },
+    {
+      "rank": 4,
+      "id": "F02",
+      "weight": 0.0984
+    },
+    {
+      "rank": 5,
+      "id": "F14",
+      "weight": 0.0819
+    },
+    {
+      "rank": 6,
+      "id": "F03",
+      "weight": 0.0682
+    },
+    {
+      "rank": 7,
+      "id": "F04",
+      "weight": 0.0651
+    },
+    {
+      "rank": 8,
+      "id": "F07",
+      "weight": 0.0559
+    },
+    {
+      "rank": 9,
+      "id": "F09",
+      "weight": 0.0452
+    },
+    {
+      "rank": 10,
+      "id": "F18",
+      "weight": 0.025
+    },
+    {
+      "rank": 11,
+      "id": "F05",
+      "weight": 0.0218
+    },
+    {
+      "rank": 12,
+      "id": "F17",
+      "weight": 0.0218
+    },
+    {
+      "rank": 13,
+      "id": "F12",
+      "weight": 0.0154
+    },
+    {
+      "rank": 14,
+      "id": "F08",
+      "weight": 0.0144
+    },
+    {
+      "rank": 15,
+      "id": "F15",
+      "weight": 0.0144
+    },
+    {
+      "rank": 16,
+      "id": "F13",
+      "weight": 0.0135
+    },
+    {
+      "rank": 17,
+      "id": "F10",
+      "weight": 0.0115
+    },
+    {
+      "rank": 18,
+      "id": "F11",
+      "weight": 0.0047
+    }
+  ]
+}

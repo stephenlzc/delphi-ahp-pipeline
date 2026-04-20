@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新能源汽车充电站选址与运营效率提升研究 - Delphi-AHP 研究报告</title>
+    <style>
+        :root {
+            --bg-base: #f9fafb;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --accent: #059669;
+            --accent-light: #d1fae5;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --radius: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Geist", "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            color: white;
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .header .meta {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-tab:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .nav-tab.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .badge-warning {
+            background: #fef3c7;
+            color: var(--warning);
+        }
+
+        .badge-danger {
+            background: #fee2e2;
+            color: var(--danger);
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            background: #f3f4f6;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table tr:hover {
+            background: #f9fafb;
+        }
+
+        /* Grid Layout */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Progress Bars */
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 100px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 100px;
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Ranking List */
+        .ranking-list {
+            list-style: none;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-badge {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .rank-1 { background: #fef3c7; color: #d97706; }
+        .rank-2 { background: #f3f4f6; color: #6b7280; }
+        .rank-3 { background: #fed7aa; color: #ea580c; }
+        .rank-default { background: #f3f4f6; color: #9ca3af; }
+
+        .ranking-content {
+            flex: 1;
+        }
+
+        .ranking-name {
+            font-weight: 600;
+        }
+
+        .ranking-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .ranking-score {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Section Content */
+        .section-content {
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        /* Criteria Bars */
+        .criteria-bar {
+            margin-bottom: 1.5rem;
+        }
+
+        .criteria-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        /* Expert Cards */
+        .expert-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+        }
+
+        .expert-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #059669, #10b981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .expert-info {
+            flex: 1;
+        }
+
+        .expert-name {
+            font-weight: 600;
+        }
+
+        .expert-role {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .header {
+                padding: 2rem 1rem;
+                border-radius: 0 0 1rem 1rem;
+            }
+            .header h1 {
+                font-size: 1.75rem;
+            }
+            .nav-tabs {
+                justify-content: center;
+            }
+            .data-table {
+                font-size: 0.875rem;
+            }
+            .data-table th, .data-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Print */
+        @media print {
+            .nav-tabs, .no-print { display: none !important; }
+            .card { break-inside: avoid; }
+            .header { background: #111827 !important; color: white !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>新能源汽车充电站选址与运营效率提升研究</h1>
+        <p class="subtitle">Delphi-AHP 研究分析报告</p>
+        <p class="meta">生成时间: 2026-04-20 19:33</p>
+    </div>
+
+    <div class="container">
+        <nav class="nav-tabs no-print">
+            <button class="nav-tab active" onclick="showSection('overview')">研究概览</button>
+            <button class="nav-tab" onclick="showSection('criteria')">准则层</button>
+            <button class="nav-tab" onclick="showSection('alternatives')">方案层</button>
+            <button class="nav-tab" onclick="showSection('convergence')">收敛检验</button>
+            <button class="nav-tab" onclick="showSection('sensitivity')">敏感性</button>
+            <button class="nav-tab" onclick="showSection('experts')">专家团队</button>
+        </nav>
+
+        <!-- Overview Section -->
+        <div id="overview" class="section-content active">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">研究背景</h2>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.8;">随着新能源汽车渗透率快速上升，充电基础设施建设正从“数量扩张”阶段进入“质量优化”阶段。过去一段时间，很多城市重点解决的是“有没有充电桩”的问题，而当前更突出的矛盾已经转向“布局是否合理、使用是否方便、运营是否高效”。在实际运营中，部分区域存在“高峰排队严重、平峰闲置明显”的现象，充电资源配置不均衡；一些社区和商圈虽然车流量较大，但充电站供给不足，导致用户寻找充电资源的时间成本上升。同时，部分新建充电站因选址不当、客流不足、周边配套缺失等原因，长期利用率偏低，投资回收周期被拉长。因此，单纯增加充电站数量已无法满足精细化发展需求。如何兼顾需求覆盖、建设成本与运营收益，推动充电站从粗放式扩张转向科学布局与高效运营，成为城市交通基础设施管理中的现实课题。</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">研究目的</h2>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.8;">本研究旨在从选址与运营协同的角度，系统分析新能源汽车充电站建设和使用中的主要矛盾，识别影响运营效率的核心因素，并提出具有实践意义的优化方案。具体而言，研究希望实现以下目标：第一，分析城市内部不同区域的充电需求差异及其形成机制；第二，诊断现有充电站布局中存在的覆盖不足、资源浪费和负荷不均等问题；第三，构建影响充电站利用率与收益水平的关键因素体系；第四，提出面向城市管理部门和运营企业的选址优化与运营提升建议。</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-experts">0</div>
+                    <div class="stat-label">专家数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-criteria">0</div>
+                    <div class="stat-label">准则数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-factors">0</div>
+                    <div class="stat-label">因素数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-cr">-</div>
+                    <div class="stat-label">一致性CR</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">关键因素 Top 5</h2>
+                </div>
+                <ul class="ranking-list" id="top5-list"></ul>
+            </div>
+        </div>
+
+        <!-- Criteria Section -->
+        <div id="criteria" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">准则层权重</h2>
+                    <span class="badge badge-success" id="cr-badge">CR &le; 0.10</span>
+                </div>
+                <div id="criteria-bars"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">准则层权重详情</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>准则名称</th>
+                            <th>权重</th>
+                            <th>λmax</th>
+                            <th>CI</th>
+                            <th>CR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="criteria-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Alternatives Section -->
+        <div id="alternatives" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">因素综合权重排名</h2>
+                </div>
+                <ul class="ranking-list" id="full-ranking-list"></ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">权重分布</h2>
+                </div>
+                <div id="weight-distribution"></div>
+            </div>
+        </div>
+
+        <!-- Convergence Section -->
+        <div id="convergence" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">收敛检验结果</h2>
+                </div>
+                <div id="convergence-summary"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">各因素收敛状态</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>因素</th>
+                            <th>均值</th>
+                            <th>标准差</th>
+                            <th>CV</th>
+                            <th>一致性</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody id="convergence-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sensitivity Section -->
+        <div id="sensitivity" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">敏感性分析结果</h2>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    分析方法：对准则权重和方案得分分别进行 &plusmn;10% 的变幅测试
+                </p>
+                <div id="sensitivity-summary"></div>
+            </div>
+        </div>
+
+        <!-- Experts Section -->
+        <div id="experts" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">专家团队</h2>
+                </div>
+                <div id="expert-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>本报告由 Delphi-AHP 流程自动生成</p>
+        <p>2026-04-20 19:33:19</p>
+    </div>
+
+    <script>
+        // Report Data
+        const reportData = {"project_title":"新能源汽车充电站选址与运营效率提升研究","framework":"本研究围绕“城市出行需求识别—充电网络布局诊断—运营效率影响因素提炼—优化策略设计”的逻辑展开。首先，从城市交通结构、居民出行半径、停车资源分布和新能源汽车保有量等维度出发，识别充电需求的空间分布特征。其次，对现有充电站布局进行诊断，分析其在覆盖范围、排队时长、设备利用率、时段负荷差异和用户可达性等方面存在的问题。再次，结合用户行为、场地租金、电网负荷、配套商业、人流密度与政策支持等因素，构建充电站运营效率影响因素体系。最后，基于需求密度与运营效率协同视角，提出充电站选址优化、时段调度优化和商业协同提升方案。","background":"随着新能源汽车渗透率快速上升，充电基础设施建设正从“数量扩张”阶段进入“质量优化”阶段。过去一段时间，很多城市重点解决的是“有没有充电桩”的问题，而当前更突出的矛盾已经转向“布局是否合理、使用是否方便、运营是否高效”。在实际运营中，部分区域存在“高峰排队严重、平峰闲置明显”的现象，充电资源配置不均衡；一些社区和商圈虽然车流量较大，但充电站供给不足，导致用户寻找充电资源的时间成本上升。同时，部分新建充电站因选址不当、客流不足、周边配套缺失等原因，长期利用率偏低，投资回收周期被拉长。因此，单纯增加充电站数量已无法满足精细化发展需求。如何兼顾需求覆盖、建设成本与运营收益，推动充电站从粗放式扩张转向科学布局与高效运营，成为城市交通基础设施管理中的现实课题。","purpose":"本研究旨在从选址与运营协同的角度，系统分析新能源汽车充电站建设和使用中的主要矛盾，识别影响运营效率的核心因素，并提出具有实践意义的优化方案。具体而言，研究希望实现以下目标：第一，分析城市内部不同区域的充电需求差异及其形成机制；第二，诊断现有充电站布局中存在的覆盖不足、资源浪费和负荷不均等问题；第三，构建影响充电站利用率与收益水平的关键因素体系；第四，提出面向城市管理部门和运营企业的选址优化与运营提升建议。","experts":[{"id":"E01","name":"李华博士","role":"交通规划研究所所长","org_type":"研究机构","expertise":"交通规划、城市基础设施管理"},{"id":"E02","name":"赵明教授","role":"教授兼新能源汽车研究中心主任","org_type":"高校","expertise":"新能源汽车技术、能源管理"},{"id":"E03","name":"王丽经理","role":"城市基础设施规划部经理","org_type":"政府机构","expertise":"城市规划、基础设施优化"}],"criteria":[{"id":"C01","name":"需求特征与匹配性","description":"充电需求的时空分布规律及其与供给的匹配程"},{"id":"C02","name":"运营效率与经济性","description":"充电站运营绩效与投资回报的综合表现"},{"id":"C03","name":"资源约束与供给能力","description":"电网承载力与有效供给的硬性约束条件"},{"id":"C04","name":"研究创新与决策支撑","description":"科研方法创新与政策建议的综合能力"}],"criteria_weights":[{"id":"C01","name":"需求特征与匹配性","weight":0.5245,"lambda_max":4.3772,"ci":0.1257,"cr":0.1397,"consistency_passed":false},{"id":"C02","name":"运营效率与经济性","weight":0.2423,"lambda_max":4.3772,"ci":0.1257,"cr":0.1397,"consistency_passed":false},{"id":"C03","name":"资源约束与供给能力","weight":0.1649,"lambda_max":4.3772,"ci":0.1257,"cr":0.1397,"consistency_passed":false},{"id":"C04","name":"研究创新与决策支撑","weight":0.0683,"lambda_max":4.3772,"ci":0.1257,"cr":0.1397,"consistency_passed":false}],"criteria_map":{"C01":"需求特征与匹配性","C02":"运营效率与经济性","C03":"资源约束与供给能力","C04":"研究创新与决策支撑"},"alternatives":[{"id":"F01","name":"需求时空分布动态性","description":"充电需求在时间和空间上的波动特征","belongs_to_criteria":"C01"},{"id":"F02","name":"设备利用率峰谷差","description":"不同时段充电设备使用率的差异程度","belongs_to_criteria":"C02"},{"id":"F03","name":"选址与需求匹配度","description":"充电站位置与实际需求分布的吻合程度","belongs_to_criteria":"C01"},{"id":"F04","name":"投资回收周期","description":"充电站建设投资的资金回收时长","belongs_to_criteria":"C02"},{"id":"F05","name":"用户时间成本","description":"用户寻找充电桩和等待充电的时间损耗","belongs_to_criteria":"C02"},{"id":"F06","name":"站点类型差异化特征","description":"不同场景站点的需求规律和运营特点","belongs_to_criteria":"C02"},{"id":"F07","name":"调控机制有效性","description":"动态定价、预约等调控手段的实际效果","belongs_to_criteria":"C1"},{"id":"F08","name":"产学研合作能力","description":"与企业和平台开展合作研究","belongs_to_criteria":"C04"},{"id":"F09","name":"多源数据融合能力","description":"整合实时动态数据进行分析","belongs_to_criteria":"C04"},{"id":"F10","name":"创新模型构建能力","description":"开发新型选址与运营模型","belongs_to_criteria":"C04"},{"id":"F11","name":"实证案例研究能力","description":"通过实地监测验证理论","belongs_to_criteria":"C04"},{"id":"F12","name":"政策洞察与建议能力","description":"提出前瞻性政策影响决策","belongs_to_criteria":"C04"},{"id":"F13","name":"需求时空波动性","description":"反映充电需求的潮汐式极化特征","belongs_to_criteria":"C01"},{"id":"F14","name":"城市锚点依赖度","description":"需求对高频活动节点的依附程度","belongs_to_criteria":"C01"},{"id":"F15","name":"边缘里程焦虑效应","description":"城郊因里程焦虑诱发的高补能需求","belongs_to_criteria":"C01"},{"id":"F16","name":"车桩时空耦合度","description":"车辆停留与充电桩在时空上的匹配度","belongs_to_criteria":"C01"},{"id":"F17","name":"有效需求转化率","description":"剔除无效需求后的真实充电需求占比","belongs_to_criteria":"C01"},{"id":"F18","name":"区域电网承载力","description":"电网余量对充电站选址的硬约束","belongs_to_criteria":"C03"},{"id":"F19","name":"有效供给真实度","description":"实际可用桩与名义供给桩的偏离度","belongs_to_criteria":"C03"}],"sorted_alts":[{"id":"F03","name":"选址与需求匹配度","description":"充电站位置与实际需求分布的吻合程度","belongs_to_criteria":"C01"},{"id":"F18","name":"区域电网承载力","description":"电网余量对充电站选址的硬约束","belongs_to_criteria":"C03"},{"id":"F01","name":"需求时空分布动态性","description":"充电需求在时间和空间上的波动特征","belongs_to_criteria":"C01"},{"id":"F02","name":"设备利用率峰谷差","description":"不同时段充电设备使用率的差异程度","belongs_to_criteria":"C02"},{"id":"F13","name":"需求时空波动性","description":"反映充电需求的潮汐式极化特征","belongs_to_criteria":"C01"},{"id":"F04","name":"投资回收周期","description":"充电站建设投资的资金回收时长","belongs_to_criteria":"C02"},{"id":"F14","name":"城市锚点依赖度","description":"需求对高频活动节点的依附程度","belongs_to_criteria":"C01"},{"id":"F16","name":"车桩时空耦合度","description":"车辆停留与充电桩在时空上的匹配度","belongs_to_criteria":"C01"},{"id":"F05","name":"用户时间成本","description":"用户寻找充电桩和等待充电的时间损耗","belongs_to_criteria":"C02"},{"id":"F15","name":"边缘里程焦虑效应","description":"城郊因里程焦虑诱发的高补能需求","belongs_to_criteria":"C01"},{"id":"F19","name":"有效供给真实度","description":"实际可用桩与名义供给桩的偏离度","belongs_to_criteria":"C03"},{"id":"F17","name":"有效需求转化率","description":"剔除无效需求后的真实充电需求占比","belongs_to_criteria":"C01"},{"id":"F08","name":"产学研合作能力","description":"与企业和平台开展合作研究","belongs_to_criteria":"C04"},{"id":"F06","name":"站点类型差异化特征","description":"不同场景站点的需求规律和运营特点","belongs_to_criteria":"C02"},{"id":"F09","name":"多源数据融合能力","description":"整合实时动态数据进行分析","belongs_to_criteria":"C04"},{"id":"F10","name":"创新模型构建能力","description":"开发新型选址与运营模型","belongs_to_criteria":"C04"},{"id":"F12","name":"政策洞察与建议能力","description":"提出前瞻性政策影响决策","belongs_to_criteria":"C04"},{"id":"F11","name":"实证案例研究能力","description":"通过实地监测验证理论","belongs_to_criteria":"C04"},{"id":"F07","name":"调控机制有效性","description":"动态定价、预约等调控手段的实际效果","belongs_to_criteria":"C1"}],"ranking":[{"rank":1,"id":"F03","weight":0.1493},{"rank":2,"id":"F18","weight":0.1333},{"rank":3,"id":"F01","weight":0.1183},{"rank":4,"id":"F02","weight":0.1062},{"rank":5,"id":"F13","weight":0.081},{"rank":6,"id":"F04","weight":0.0795},{"rank":7,"id":"F14","weight":0.0679},{"rank":8,"id":"F16","weight":0.0452},{"rank":9,"id":"F05","weight":0.0367},{"rank":10,"id":"F15","weight":0.0323},{"rank":11,"id":"F19","weight":0.0316},{"rank":12,"id":"F17","weight":0.0306},{"rank":13,"id":"F08","weight":0.0214},{"rank":14,"id":"F06","weight":0.02},{"rank":15,"id":"F09","weight":0.0165},{"rank":16,"id":"F10","weight":0.0155},{"rank":17,"id":"F12","weight":0.0081},{"rank":18,"id":"F11","weight":0.0068},{"rank":19,"id":"F07","weight":0.0}],"convergence_data":{"run_id":"run_20260420_174836_新能源汽车充电站选址与运营效率提升研究","project_title":"新能源汽车充电站选址与运营效率提升研究","threshold":0.5,"total_factors":19,"converged_count":19,"not_converged_count":0,"factor_results":{"F01":{"mean":0.2262,"std_dev":0.0452,"cv":0.1998,"cv_percent":19.98,"converged":true,"scores":[0.2046,0.1958,0.2781],"expert_count":3,"agreement":"高度一致"},"F03":{"mean":0.2837,"std_dev":0.0403,"cv":0.1419,"cv_percent":14.19,"converged":true,"scores":[0.3012,0.3123,0.2377],"expert_count":3,"agreement":"高度一致"},"F13":{"mean":0.1535,"std_dev":0.0185,"cv":0.1208,"cv_percent":12.08,"converged":true,"scores":[0.1749,0.1431,0.1425],"expert_count":3,"agreement":"高度一致"},"F14":{"mean":0.1308,"std_dev":0.0318,"cv":0.2428,"cv_percent":24.28,"converged":true,"scores":[0.0974,0.1606,0.1344],"expert_count":3,"agreement":"基本一致"},"F15":{"mean":0.0615,"std_dev":0.0093,"cv":0.1508,"cv_percent":15.08,"converged":true,"scores":[0.0628,0.0516,0.07],"expert_count":3,"agreement":"高度一致"},"F16":{"mean":0.0853,"std_dev":0.0036,"cv":0.0419,"cv_percent":4.19,"converged":true,"scores":[0.0825,0.0893,0.084],"expert_count":3,"agreement":"高度一致"},"F17":{"mean":0.0591,"std_dev":0.0155,"cv":0.262,"cv_percent":26.2,"converged":true,"scores":[0.0766,0.0473,0.0533],"expert_count":3,"agreement":"基本一致"},"F02":{"mean":0.4385,"std_dev":0.0764,"cv":0.1743,"cv_percent":17.43,"converged":true,"scores":[0.3784,0.5245,0.4126],"expert_count":3,"agreement":"高度一致"},"F04":{"mean":0.327,"std_dev":0.0399,"cv":0.122,"cv_percent":12.2,"converged":true,"scores":[0.342,0.2818,0.3573],"expert_count":3,"agreement":"高度一致"},"F05":{"mean":0.1519,"std_dev":0.0293,"cv":0.193,"cv_percent":19.3,"converged":true,"scores":[0.1837,0.126,0.1459],"expert_count":3,"agreement":"高度一致"},"F06":{"mean":0.0826,"std_dev":0.0142,"cv":0.1715,"cv_percent":17.15,"converged":true,"scores":[0.0959,0.0677,0.0842],"expert_count":3,"agreement":"高度一致"},"F07":{"mean":0.0,"std_dev":0.0,"cv":0.0,"cv_percent":0.0,"converged":true,"scores":[],"expert_count":0,"agreement":"数据不足"},"F08":{"mean":0.3134,"std_dev":0.0696,"cv":0.222,"cv_percent":22.2,"converged":true,"scores":[0.3212,0.3788,0.2403],"expert_count":3,"agreement":"基本一致"},"F09":{"mean":0.2396,"std_dev":0.0403,"cv":0.1682,"cv_percent":16.82,"converged":true,"scores":[0.2796,0.199,0.2403],"expert_count":3,"agreement":"高度一致"},"F10":{"mean":0.2266,"std_dev":0.0413,"cv":0.1821,"cv_percent":18.21,"converged":true,"scores":[0.1802,0.2592,0.2403],"expert_count":3,"agreement":"高度一致"},"F11":{"mean":0.0997,"std_dev":0.0221,"cv":0.2215,"cv_percent":22.15,"converged":true,"scores":[0.0932,0.0816,0.1243],"expert_count":3,"agreement":"基本一致"},"F12":{"mean":0.1208,"std_dev":0.0369,"cv":0.3053,"cv_percent":30.53,"converged":true,"scores":[0.1259,0.0816,0.1548],"expert_count":3,"agreement":"基本一致"},"F18":{"mean":0.8055,"std_dev":0.0481,"cv":0.0597,"cv_percent":5.97,"converged":true,"scores":[0.75,0.8333,0.8333],"expert_count":3,"agreement":"高度一致"},"F19":{"mean":0.1945,"std_dev":0.0481,"cv":0.2473,"cv_percent":24.73,"converged":true,"scores":[0.25,0.1667,0.1667],"expert_count":3,"agreement":"基本一致"}},"overall_pass":true,"expert_scores_summary":[{"expert_id":"E01","expert_name":"李华博士","score_count":4},{"expert_id":"E02","expert_name":"赵明教授","score_count":4},{"expert_id":"E03","expert_name":"王丽经理","score_count":4}],"timestamp":"2026-04-20T19:30:51.957956","ahp_consistency":{"cr":0.1397,"lambda_max":4.3772,"ci":0.1257,"passed":false}},"sensitivity_data":{"run_id":"run_20260420_174836_新能源汽车充电站选址与运营效率提升研究","criteria_sensitivity":{"original_weights":{"C01":0.5245,"C02":0.2423,"C03":0.1649,"C04":0.0683},"original_ranking":[{"id":"F01","weight":0.3934,"rank":1},{"id":"F03","weight":0.3934,"rank":2},{"id":"F07","weight":0.3934,"rank":3},{"id":"F13","weight":0.3934,"rank":4},{"id":"F14","weight":0.3934,"rank":5},{"id":"F15","weight":0.3934,"rank":6},{"id":"F16","weight":0.3934,"rank":7},{"id":"F17","weight":0.3934,"rank":8},{"id":"F02","weight":0.1817,"rank":9},{"id":"F04","weight":0.1817,"rank":10},{"id":"F05","weight":0.1817,"rank":11},{"id":"F06","weight":0.1817,"rank":12},{"id":"F18","weight":0.1237,"rank":13},{"id":"F19","weight":0.1237,"rank":14},{"id":"F08","weight":0.0512,"rank":15},{"id":"F09","weight":0.0512,"rank":16},{"id":"F10","weight":0.0512,"rank":17},{"id":"F11","weight":0.0512,"rank":18},{"id":"F12","weight":0.0512,"rank":19}],"variation_percent":10.0,"scenarios":[{"criteria_id":"C01","criteria_name":"需求特征与匹配性","original_weight":0.5245,"increase_scenario":{"new_weight":0.5482,"weight_change_pct":4.52,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F07":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F13":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F15":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F16":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F07","rank":3}]},"decrease_scenario":{"new_weight":0.4982,"weight_change_pct":-5.02,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F07":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F13":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F15":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F16":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F07","rank":3}]}},{"criteria_id":"C02","criteria_name":"运营效率与经济性","original_weight":0.2423,"increase_scenario":{"new_weight":0.2602,"weight_change_pct":7.4,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F07":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F13":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F15":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F16":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F07","rank":3}]},"decrease_scenario":{"new_weight":0.2235,"weight_change_pct":-7.76,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F07":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F13":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F15":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F16":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F07","rank":3}]}},{"criteria_id":"C03","criteria_name":"资源约束与供给能力","original_weight":0.1649,"increase_scenario":{"new_weight":0.1784,"weight_change_pct":8.22,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F07":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F13":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F15":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F16":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F07","rank":3}]},"decrease_scenario":{"new_weight":0.1509,"weight_change_pct":-8.49,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F07":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F13":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F15":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F16":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F07","rank":3}]}},{"criteria_id":"C04","criteria_name":"研究创新与决策支撑","original_weight":0.0683,"increase_scenario":{"new_weight":0.0746,"weight_change_pct":9.25,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F07":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F13":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F15":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F16":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F07","rank":3}]},"decrease_scenario":{"new_weight":0.0619,"weight_change_pct":-9.38,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F07":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F13":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F15":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F16":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F07","rank":3}]}}]},"score_sensitivity":{"original_scores":{},"original_ranking":[{"id":"F01","weight":0.3934,"rank":1},{"id":"F03","weight":0.3934,"rank":2},{"id":"F13","weight":0.3934,"rank":3},{"id":"F14","weight":0.3934,"rank":4},{"id":"F15","weight":0.3934,"rank":5},{"id":"F16","weight":0.3934,"rank":6},{"id":"F17","weight":0.3934,"rank":7},{"id":"F07","weight":0.1875,"rank":8},{"id":"F02","weight":0.1817,"rank":9},{"id":"F04","weight":0.1817,"rank":10},{"id":"F05","weight":0.1817,"rank":11},{"id":"F06","weight":0.1817,"rank":12},{"id":"F18","weight":0.1237,"rank":13},{"id":"F19","weight":0.1237,"rank":14},{"id":"F08","weight":0.0512,"rank":15},{"id":"F09","weight":0.0512,"rank":16},{"id":"F10","weight":0.0512,"rank":17},{"id":"F11","weight":0.0512,"rank":18},{"id":"F12","weight":0.0512,"rank":19}],"variation_percent":10.0,"scenarios":[{"alternative_id":"F01","alternative_name":"需求时空分布动态性","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":7,"rank_change":-6,"stable":false},"F03":{"original_rank":2,"new_rank":1,"rank_change":1,"stable":false},"F13":{"original_rank":3,"new_rank":2,"rank_change":1,"stable":false},"F14":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F15":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F03","rank":1},{"id":"F13","rank":2},{"id":"F14","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":7,"rank_change":-6,"stable":false},"F03":{"original_rank":2,"new_rank":1,"rank_change":1,"stable":false},"F13":{"original_rank":3,"new_rank":2,"rank_change":1,"stable":false},"F14":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F15":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F03","rank":1},{"id":"F13","rank":2},{"id":"F14","rank":3}]}},{"alternative_id":"F02","alternative_name":"设备利用率峰谷差","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":14,"rank_change":-5,"stable":false},"F04":{"original_rank":10,"new_rank":9,"rank_change":1,"stable":false},"F05":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F06":{"original_rank":12,"new_rank":11,"rank_change":1,"stable":false},"F18":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":14,"rank_change":-5,"stable":false},"F04":{"original_rank":10,"new_rank":9,"rank_change":1,"stable":false},"F05":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F06":{"original_rank":12,"new_rank":11,"rank_change":1,"stable":false},"F18":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F03","alternative_name":"选址与需求匹配度","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":7,"rank_change":-5,"stable":false},"F13":{"original_rank":3,"new_rank":2,"rank_change":1,"stable":false},"F14":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F15":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F13","rank":2},{"id":"F14","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":7,"rank_change":-5,"stable":false},"F13":{"original_rank":3,"new_rank":2,"rank_change":1,"stable":false},"F14":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F15":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F13","rank":2},{"id":"F14","rank":3}]}},{"alternative_id":"F04","alternative_name":"投资回收周期","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":14,"rank_change":-4,"stable":false},"F05":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F06":{"original_rank":12,"new_rank":11,"rank_change":1,"stable":false},"F18":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":14,"rank_change":-4,"stable":false},"F05":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F06":{"original_rank":12,"new_rank":11,"rank_change":1,"stable":false},"F18":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F05","alternative_name":"用户时间成本","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":14,"rank_change":-3,"stable":false},"F06":{"original_rank":12,"new_rank":11,"rank_change":1,"stable":false},"F18":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":14,"rank_change":-3,"stable":false},"F06":{"original_rank":12,"new_rank":11,"rank_change":1,"stable":false},"F18":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F06","alternative_name":"站点类型差异化特征","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":14,"rank_change":-2,"stable":false},"F18":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":14,"rank_change":-2,"stable":false},"F18":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F07","alternative_name":"调控机制有效性","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":12,"rank_change":-4,"stable":false},"F02":{"original_rank":9,"new_rank":8,"rank_change":1,"stable":false},"F04":{"original_rank":10,"new_rank":9,"rank_change":1,"stable":false},"F05":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F06":{"original_rank":12,"new_rank":11,"rank_change":1,"stable":false},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":12,"rank_change":-4,"stable":false},"F02":{"original_rank":9,"new_rank":8,"rank_change":1,"stable":false},"F04":{"original_rank":10,"new_rank":9,"rank_change":1,"stable":false},"F05":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F06":{"original_rank":12,"new_rank":11,"rank_change":1,"stable":false},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F08","alternative_name":"产学研合作能力","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":19,"rank_change":-4,"stable":false},"F09":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F10":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F11":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false},"F12":{"original_rank":19,"new_rank":18,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":19,"rank_change":-4,"stable":false},"F09":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F10":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F11":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false},"F12":{"original_rank":19,"new_rank":18,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F09","alternative_name":"多源数据融合能力","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":19,"rank_change":-3,"stable":false},"F10":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F11":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false},"F12":{"original_rank":19,"new_rank":18,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":19,"rank_change":-3,"stable":false},"F10":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F11":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false},"F12":{"original_rank":19,"new_rank":18,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F10","alternative_name":"创新模型构建能力","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":19,"rank_change":-2,"stable":false},"F11":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false},"F12":{"original_rank":19,"new_rank":18,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":19,"rank_change":-2,"stable":false},"F11":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false},"F12":{"original_rank":19,"new_rank":18,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F11","alternative_name":"实证案例研究能力","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":19,"rank_change":-1,"stable":false},"F12":{"original_rank":19,"new_rank":18,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":19,"rank_change":-1,"stable":false},"F12":{"original_rank":19,"new_rank":18,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F12","alternative_name":"政策洞察与建议能力","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F13","alternative_name":"需求时空波动性","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":7,"rank_change":-4,"stable":false},"F14":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F15":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F14","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":7,"rank_change":-4,"stable":false},"F14":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F15":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F14","rank":3}]}},{"alternative_id":"F14","alternative_name":"城市锚点依赖度","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":7,"rank_change":-3,"stable":false},"F15":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":7,"rank_change":-3,"stable":false},"F15":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F15","alternative_name":"边缘里程焦虑效应","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":7,"rank_change":-2,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":7,"rank_change":-2,"stable":false},"F16":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F16","alternative_name":"车桩时空耦合度","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":7,"rank_change":-1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":7,"rank_change":-1,"stable":false},"F17":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F17","alternative_name":"有效需求转化率","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F18","alternative_name":"区域电网承载力","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":14,"rank_change":-1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":14,"rank_change":-1,"stable":false},"F19":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}},{"alternative_id":"F19","alternative_name":"有效供给真实度","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F03":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F13":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F14":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F15":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F16":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F17":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F07":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F02":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F04":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F05":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F06":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F18":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F19":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F09":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F10":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F11":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true},"F12":{"original_rank":19,"new_rank":19,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F03","rank":2},{"id":"F13","rank":3}]}}]},"timestamp":"2026-04-20T19:30:53.795642"}};
+
+        // Navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stats
+            document.getElementById('stat-experts').textContent = reportData.experts.length;
+            document.getElementById('stat-criteria').textContent = reportData.criteria.length;
+            document.getElementById('stat-factors').textContent = reportData.alternatives.length;
+
+            // CR value
+            const ahpCons = reportData.convergence_data?.ahp_consistency;
+            if (ahpCons) {
+                const crEl = document.getElementById('stat-cr');
+                crEl.textContent = ahpCons.cr.toFixed(4);
+                const badge = document.getElementById('cr-badge');
+                if (!ahpCons.passed) {
+                    badge.className = 'badge badge-danger';
+                    badge.textContent = 'CR > 0.10';
+                }
+            }
+
+            // Top 5 Ranking
+            const top5List = document.getElementById('top5-list');
+            reportData.sorted_alts.slice(0, 5).forEach((alt, i) => {
+                const altWeight = reportData.ranking.find(r => r.id === alt.id);
+                const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-default';
+                top5List.innerHTML += `
+                    <li class="ranking-item">
+                        <span class="rank-badge ${rankClass}">${i + 1}</span>
+                        <div class="ranking-content">
+                            <div class="ranking-name">${alt.name}</div>
+                            <div class="ranking-meta">${reportData.criteria_map?.[alt.belongs_to_criteria] || alt.belongs_to_criteria || ''}</div>
+                        </div>
+                        <span class="ranking-score">${(altWeight?.weight * 100 || 0).toFixed(2)}%</span>
+                    </li>
+                `;
+            });
+
+            // Criteria Bars
+            const criteriaBars = document.getElementById('criteria-bars');
+            reportData.criteria_weights?.forEach(c => {
+                criteriaBars.innerHTML += `
+                    <div class="criteria-bar">
+                        <div class="criteria-label">
+                            <span>${c.name}</span>
+                            <span>${(c.weight * 100).toFixed(1)}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${c.weight * 100}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Criteria Table
+            const criteriaTableBody = document.getElementById('criteria-table-body');
+            reportData.criteria_weights?.forEach(c => {
+                criteriaTableBody.innerHTML += `
+                    <tr>
+                        <td>${c.id}</td>
+                        <td>${c.name}</td>
+                        <td>${c.weight.toFixed(4)}</td>
+                        <td>${(c.lambda_max || 0).toFixed(4)}</td>
+                        <td>${(c.ci || 0).toFixed(4)}</td>
+                        <td>${(c.cr || 0).toFixed(4)} ${c.consistency_passed ? '✓' : '✗'}</td>
+                    </tr>
+                `;
+            });
+
+            // Full Ranking List
+            const fullRankingList = document.getElementById('full-ranking-list');
+            reportData.sorted_alts.forEach((alt, i) => {
+                const altWeight = reportData.ranking.find(r => r.id === alt.id);
+                const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-default';
+                fullRankingList.innerHTML += `
+                    <li class="ranking-item">
+                        <span class="rank-badge ${rankClass}">${i + 1}</span>
+                        <div class="ranking-content">
+                            <div class="ranking-name">${alt.name}</div>
+                            <div class="ranking-meta">${reportData.criteria_map?.[alt.belongs_to_criteria] || alt.belongs_to_criteria || ''} | 原始得分: ${(alt.raw_score || 0).toFixed(2)}</div>
+                        </div>
+                        <span class="ranking-score">${(altWeight?.weight * 100 || 0).toFixed(2)}%</span>
+                    </li>
+                `;
+            });
+
+            // Weight Distribution
+            const weightDist = document.getElementById('weight-distribution');
+            reportData.sorted_alts.slice(0, 10).forEach((alt, i) => {
+                const altWeight = reportData.ranking.find(r => r.id === alt.id);
+                const weight = altWeight?.weight || 0;
+                weightDist.innerHTML += `
+                    <div class="criteria-bar">
+                        <div class="criteria-label">
+                            <span>${i + 1}. ${alt.name}</span>
+                            <span>${(weight * 100).toFixed(2)}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${weight * 100 * 3}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Convergence
+            const convSummary = document.getElementById('convergence-summary');
+            const convData = reportData.convergence_data;
+            if (convData && convData.factor_results) {
+                const total = convData.total_factors || Object.keys(convData.factor_results).length;
+                const converged = convData.converged_count || 0;
+                convSummary.innerHTML = `
+                    <div class="grid-2">
+                        <div class="stat-card">
+                            <div class="stat-value">${converged}/${total}</div>
+                            <div class="stat-label">已收敛因素</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${(converged / total * 100).toFixed(0)}%</div>
+                            <div class="stat-label">收敛率</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const convTableBody = document.getElementById('convergence-table-body');
+            if (convData && convData.factor_results) {
+                Object.entries(convData.factor_results).forEach(([fid, result]) => {
+                    const statusClass = result.converged ? 'badge-success' : 'badge-danger';
+                    const statusText = result.converged ? '已收敛' : '未收敛';
+                    convTableBody.innerHTML += `
+                        <tr>
+                            <td>${fid}</td>
+                            <td>${(result.mean || 0).toFixed(2)}</td>
+                            <td>${(result.std_dev || 0).toFixed(2)}</td>
+                            <td>${(result.cv_percent || 0).toFixed(2)}%</td>
+                            <td>${result.agreement || '-'}</td>
+                            <td><span class="badge ${statusClass}">${statusText}</span></td>
+                        </tr>
+                    `;
+                });
+            }
+
+            // Sensitivity
+            const sensSummary = document.getElementById('sensitivity-summary');
+            if (reportData.sensitivity_data) {
+                const critSens = reportData.sensitivity_data.criteria_sensitivity;
+                const scoreSens = reportData.sensitivity_data.score_sensitivity;
+
+                let stableCount = 0;
+                let totalCount = 0;
+
+                critSens?.scenarios?.forEach(s => {
+                    totalCount += 2;
+                    const upStable = Object.values(s.increase_scenario?.ranking_changes || {}).every(c => c.stable);
+                    const downStable = Object.values(s.decrease_scenario?.ranking_changes || {}).every(c => c.stable);
+                    if (upStable && downStable) stableCount++;
+                });
+
+                scoreSens?.scenarios?.forEach(s => {
+                    totalCount += 2;
+                    const upStable = Object.values(s.increase_scenario?.ranking_changes || {}).every(c => c.stable);
+                    const downStable = Object.values(s.decrease_scenario?.ranking_changes || {}).every(c => c.stable);
+                    if (upStable && downStable) stableCount++;
+                });
+
+                const stablePct = totalCount > 0 ? (stableCount / totalCount * 100).toFixed(0) : 0;
+                const stability = stablePct >= 80 ? '高' : stablePct >= 50 ? '中' : '低';
+
+                sensSummary.innerHTML = `
+                    <div class="grid-2">
+                        <div class="stat-card">
+                            <div class="stat-value">${stableCount}/${totalCount}</div>
+                            <div class="stat-label">稳定场景</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${stablePct}%</div>
+                            <div class="stat-label">稳健性</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; color: var(--text-secondary);">
+                        稳健性${stability}：${stablePct}% 的场景在参数变化 &plusmn;10% 时排名保持稳定
+                    </p>
+                `;
+            }
+
+            // Experts
+            const expertList = document.getElementById('expert-list');
+            reportData.experts?.forEach(exp => {
+                const initials = exp.name?.slice(0, 1) || '?';
+                expertList.innerHTML += `
+                    <div class="expert-card">
+                        <div class="expert-avatar">${initials}</div>
+                        <div class="expert-info">
+                            <div class="expert-name">${exp.name}</div>
+                            <div class="expert-role">${exp.role} | ${exp.org_type} | ${exp.expertise}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "run_id": "run_20260420_194117_直播电商主播信任机制与消费者复购意愿研究",
+  "title": "直播电商主播信任机制与消费者复购意愿研究",
+  "status": "completed",
+  "created_at": "2026-04-20T21:18:26.003928",
+  "artifacts": [
+    "project.json",
+    "interview_records.json",
+    "factor_coding.json",
+    "ahp_hierarchy.json",
+    "criteria_comparisons.json",
+    "alternative_scores.json",
+    "ahp_results.json",
+    "analysis_results.md"
+  ]
+}

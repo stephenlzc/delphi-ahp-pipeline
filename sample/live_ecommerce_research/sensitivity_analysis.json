@@ -1,0 +1,6435 @@
+{
+  "run_id": "run_20260420_194117_直播电商主播信任机制与消费者复购意愿研究",
+  "criteria_sensitivity": {
+    "original_weights": {
+      "C01": 0.3444,
+      "C02": 0.2486,
+      "C03": 0.1118,
+      "C04": 0.1761,
+      "C05": 0.0577,
+      "C06": 0.0614
+    },
+    "original_ranking": [
+      {
+        "id": "F01",
+        "weight": 0.2583,
+        "rank": 1
+      },
+      {
+        "id": "F16",
+        "weight": 0.2583,
+        "rank": 2
+      },
+      {
+        "id": "F02",
+        "weight": 0.1864,
+        "rank": 3
+      },
+      {
+        "id": "F03",
+        "weight": 0.1864,
+        "rank": 4
+      },
+      {
+        "id": "F14",
+        "weight": 0.1864,
+        "rank": 5
+      },
+      {
+        "id": "F06",
+        "weight": 0.1321,
+        "rank": 6
+      },
+      {
+        "id": "F07",
+        "weight": 0.1321,
+        "rank": 7
+      },
+      {
+        "id": "F17",
+        "weight": 0.1321,
+        "rank": 8
+      },
+      {
+        "id": "F04",
+        "weight": 0.0839,
+        "rank": 9
+      },
+      {
+        "id": "F05",
+        "weight": 0.0839,
+        "rank": 10
+      },
+      {
+        "id": "F18",
+        "weight": 0.0839,
+        "rank": 11
+      },
+      {
+        "id": "F09",
+        "weight": 0.046,
+        "rank": 12
+      },
+      {
+        "id": "F10",
+        "weight": 0.046,
+        "rank": 13
+      },
+      {
+        "id": "F11",
+        "weight": 0.046,
+        "rank": 14
+      },
+      {
+        "id": "F08",
+        "weight": 0.0433,
+        "rank": 15
+      },
+      {
+        "id": "F12",
+        "weight": 0.0433,
+        "rank": 16
+      },
+      {
+        "id": "F13",
+        "weight": 0.0433,
+        "rank": 17
+      },
+      {
+        "id": "F15",
+        "weight": 0.0433,
+        "rank": 18
+      }
+    ],
+    "variation_percent": 10.0,
+    "scenarios": [
+      {
+        "criteria_id": "C01",
+        "criteria_name": "主播专业可信",
+        "original_weight": 0.3444,
+        "increase_scenario": {
+          "new_weight": 0.3662,
+          "weight_change_pct": 6.34,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_weight": 0.321,
+          "weight_change_pct": -6.79,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "criteria_id": "C02",
+        "criteria_name": "信息透明披露",
+        "original_weight": 0.2486,
+        "increase_scenario": {
+          "new_weight": 0.2668,
+          "weight_change_pct": 7.33,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_weight": 0.2294,
+          "weight_change_pct": -7.71,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "criteria_id": "C03",
+        "criteria_name": "互动回应质量",
+        "original_weight": 0.1118,
+        "increase_scenario": {
+          "new_weight": 0.1217,
+          "weight_change_pct": 8.78,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_weight": 0.1018,
+          "weight_change_pct": -8.98,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "criteria_id": "C04",
+        "criteria_name": "体验承诺一致",
+        "original_weight": 0.1761,
+        "increase_scenario": {
+          "new_weight": 0.1904,
+          "weight_change_pct": 8.1,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_weight": 0.1614,
+          "weight_change_pct": -8.39,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "criteria_id": "C05",
+        "criteria_name": "运营治理能力",
+        "original_weight": 0.0577,
+        "increase_scenario": {
+          "new_weight": 0.0632,
+          "weight_change_pct": 9.37,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 16,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 17,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 18,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 12,
+              "rank_change": 3,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 13,
+              "rank_change": 3,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 14,
+              "rank_change": 3,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 15,
+              "rank_change": 3,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_weight": 0.0523,
+          "weight_change_pct": -9.48,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "criteria_id": "C06",
+        "criteria_name": "长期信任资本",
+        "original_weight": 0.0614,
+        "increase_scenario": {
+          "new_weight": 0.0671,
+          "weight_change_pct": 9.33,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_weight": 0.0556,
+          "weight_change_pct": -9.44,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 16,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 17,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 18,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 12,
+              "rank_change": 3,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 13,
+              "rank_change": 3,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 14,
+              "rank_change": 3,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 15,
+              "rank_change": 3,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "score_sensitivity": {
+    "original_scores": {},
+    "original_ranking": [
+      {
+        "id": "F01",
+        "weight": 0.2583,
+        "rank": 1
+      },
+      {
+        "id": "F16",
+        "weight": 0.2583,
+        "rank": 2
+      },
+      {
+        "id": "F02",
+        "weight": 0.1865,
+        "rank": 3
+      },
+      {
+        "id": "F03",
+        "weight": 0.1865,
+        "rank": 4
+      },
+      {
+        "id": "F14",
+        "weight": 0.1865,
+        "rank": 5
+      },
+      {
+        "id": "F06",
+        "weight": 0.1321,
+        "rank": 6
+      },
+      {
+        "id": "F07",
+        "weight": 0.1321,
+        "rank": 7
+      },
+      {
+        "id": "F17",
+        "weight": 0.1321,
+        "rank": 8
+      },
+      {
+        "id": "F04",
+        "weight": 0.0838,
+        "rank": 9
+      },
+      {
+        "id": "F05",
+        "weight": 0.0838,
+        "rank": 10
+      },
+      {
+        "id": "F18",
+        "weight": 0.0838,
+        "rank": 11
+      },
+      {
+        "id": "F09",
+        "weight": 0.0461,
+        "rank": 12
+      },
+      {
+        "id": "F10",
+        "weight": 0.0461,
+        "rank": 13
+      },
+      {
+        "id": "F11",
+        "weight": 0.0461,
+        "rank": 14
+      },
+      {
+        "id": "F08",
+        "weight": 0.0433,
+        "rank": 15
+      },
+      {
+        "id": "F12",
+        "weight": 0.0433,
+        "rank": 16
+      },
+      {
+        "id": "F13",
+        "weight": 0.0433,
+        "rank": 17
+      },
+      {
+        "id": "F15",
+        "weight": 0.0433,
+        "rank": 18
+      }
+    ],
+    "variation_percent": 10.0,
+    "scenarios": [
+      {
+        "alternative_id": "F01",
+        "alternative_name": "专业可信度",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 5,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 1,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 2,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 3,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 4,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F16",
+              "rank": 1
+            },
+            {
+              "id": "F02",
+              "rank": 2
+            },
+            {
+              "id": "F03",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 5,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 1,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 2,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 3,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 4,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F16",
+              "rank": 1
+            },
+            {
+              "id": "F02",
+              "rank": 2
+            },
+            {
+              "id": "F03",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F02",
+        "alternative_name": "信息透明度",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 8,
+              "rank_change": -5,
+              "stable": false
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 3,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 4,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 5,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 6,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F03",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 8,
+              "rank_change": -5,
+              "stable": false
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 3,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 4,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 5,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 6,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F03",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F03",
+        "alternative_name": "局限性承认",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 8,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 4,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 5,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 6,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 8,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 4,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 5,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 6,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F04",
+        "alternative_name": "即时反馈质量",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 11,
+              "rank_change": -2,
+              "stable": false
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 9,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 10,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 11,
+              "rank_change": -2,
+              "stable": false
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 9,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 10,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F05",
+        "alternative_name": "情感互动强度",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 11,
+              "rank_change": -1,
+              "stable": false
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 10,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 11,
+              "rank_change": -1,
+              "stable": false
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 10,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F06",
+        "alternative_name": "承诺体验一致性",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 8,
+              "rank_change": -2,
+              "stable": false
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 6,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 8,
+              "rank_change": -2,
+              "stable": false
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 6,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F07",
+        "alternative_name": "售后兑现能力",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 8,
+              "rank_change": -1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 8,
+              "rank_change": -1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F08",
+        "alternative_name": "选品稳定性",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 18,
+              "rank_change": -3,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 15,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 18,
+              "rank_change": -3,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 15,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F09",
+        "alternative_name": "信任资本积累",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 18,
+              "rank_change": -6,
+              "stable": false
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 12,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 13,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 14,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 15,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 18,
+              "rank_change": -6,
+              "stable": false
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 12,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 13,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 14,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 15,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F10",
+        "alternative_name": "外部性影响",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 18,
+              "rank_change": -5,
+              "stable": false
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 13,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 14,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 15,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 18,
+              "rank_change": -5,
+              "stable": false
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 13,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 14,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 15,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F11",
+        "alternative_name": "资源配置导向",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 18,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 14,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 15,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 18,
+              "rank_change": -4,
+              "stable": false
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 14,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 15,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F12",
+        "alternative_name": "机制创新能力",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 18,
+              "rank_change": -2,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 18,
+              "rank_change": -2,
+              "stable": false
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 16,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F13",
+        "alternative_name": "责任可追溯性",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 18,
+              "rank_change": -1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 18,
+              "rank_change": -1,
+              "stable": false
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 17,
+              "rank_change": 1,
+              "stable": false
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F14",
+        "alternative_name": "信息披露规范性",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 8,
+              "rank_change": -3,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 5,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 6,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 8,
+              "rank_change": -3,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 5,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 6,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 7,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F15",
+        "alternative_name": "风险分类管理",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F16",
+        "alternative_name": "专业知识展示",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 5,
+              "rank_change": -3,
+              "stable": false
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 2,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 3,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 4,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F02",
+              "rank": 2
+            },
+            {
+              "id": "F03",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 5,
+              "rank_change": -3,
+              "stable": false
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 2,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 3,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 4,
+              "rank_change": 1,
+              "stable": false
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F02",
+              "rank": 2
+            },
+            {
+              "id": "F03",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F17",
+        "alternative_name": "个人使用体验",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      },
+      {
+        "alternative_id": "F18",
+        "alternative_name": "互动反馈机制",
+        "original_score": 7.0,
+        "increase_scenario": {
+          "new_score": 7.7,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        },
+        "decrease_scenario": {
+          "new_score": 6.3,
+          "ranking_changes": {
+            "F01": {
+              "original_rank": 1,
+              "new_rank": 1,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F16": {
+              "original_rank": 2,
+              "new_rank": 2,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F02": {
+              "original_rank": 3,
+              "new_rank": 3,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F03": {
+              "original_rank": 4,
+              "new_rank": 4,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F14": {
+              "original_rank": 5,
+              "new_rank": 5,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F06": {
+              "original_rank": 6,
+              "new_rank": 6,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F07": {
+              "original_rank": 7,
+              "new_rank": 7,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F17": {
+              "original_rank": 8,
+              "new_rank": 8,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F04": {
+              "original_rank": 9,
+              "new_rank": 9,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F05": {
+              "original_rank": 10,
+              "new_rank": 10,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F18": {
+              "original_rank": 11,
+              "new_rank": 11,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F09": {
+              "original_rank": 12,
+              "new_rank": 12,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F10": {
+              "original_rank": 13,
+              "new_rank": 13,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F11": {
+              "original_rank": 14,
+              "new_rank": 14,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F08": {
+              "original_rank": 15,
+              "new_rank": 15,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F12": {
+              "original_rank": 16,
+              "new_rank": 16,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F13": {
+              "original_rank": 17,
+              "new_rank": 17,
+              "rank_change": 0,
+              "stable": true
+            },
+            "F15": {
+              "original_rank": 18,
+              "new_rank": 18,
+              "rank_change": 0,
+              "stable": true
+            }
+          },
+          "top3": [
+            {
+              "id": "F01",
+              "rank": 1
+            },
+            {
+              "id": "F16",
+              "rank": 2
+            },
+            {
+              "id": "F02",
+              "rank": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "timestamp": "2026-04-20T21:50:59.409084"
+}

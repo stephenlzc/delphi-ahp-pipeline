@@ -1,0 +1,310 @@
+{
+  "run_id": "run_20260420_194117_直播电商主播信任机制与消费者复购意愿研究",
+  "project_title": "直播电商主播信任机制与消费者复购意愿研究",
+  "threshold": 0.5,
+  "total_factors": 18,
+  "converged_count": 18,
+  "not_converged_count": 0,
+  "factor_results": {
+    "F01": {
+      "mean": 0.5,
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "cv_percent": 0.0,
+      "converged": true,
+      "scores": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F16": {
+      "mean": 0.5,
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "cv_percent": 0.0,
+      "converged": true,
+      "scores": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F02": {
+      "mean": 0.3967,
+      "std_dev": 0.0732,
+      "cv": 0.1844,
+      "cv_percent": 18.44,
+      "converged": true,
+      "scores": [
+        0.46,
+        0.3333,
+        0.46,
+        0.3333
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F03": {
+      "mean": 0.2772,
+      "std_dev": 0.0648,
+      "cv": 0.2337,
+      "cv_percent": 23.37,
+      "converged": true,
+      "scores": [
+        0.2211,
+        0.3333,
+        0.2211,
+        0.3333
+      ],
+      "expert_count": 4,
+      "agreement": "基本一致"
+    },
+    "F14": {
+      "mean": 0.3261,
+      "std_dev": 0.0083,
+      "cv": 0.0255,
+      "cv_percent": 2.55,
+      "converged": true,
+      "scores": [
+        0.3189,
+        0.3333,
+        0.3189,
+        0.3333
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F04": {
+      "mean": 0.5796,
+      "std_dev": 0.0844,
+      "cv": 0.1456,
+      "cv_percent": 14.56,
+      "converged": true,
+      "scores": [
+        0.46,
+        0.6586,
+        0.6,
+        0.6
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F05": {
+      "mean": 0.1943,
+      "std_dev": 0.0273,
+      "cv": 0.1405,
+      "cv_percent": 14.05,
+      "converged": true,
+      "scores": [
+        0.2211,
+        0.1562,
+        0.2,
+        0.2
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F18": {
+      "mean": 0.226,
+      "std_dev": 0.0623,
+      "cv": 0.2757,
+      "cv_percent": 27.57,
+      "converged": true,
+      "scores": [
+        0.3189,
+        0.1852,
+        0.2,
+        0.2
+      ],
+      "expert_count": 4,
+      "agreement": "基本一致"
+    },
+    "F06": {
+      "mean": 0.5565,
+      "std_dev": 0.1073,
+      "cv": 0.1929,
+      "cv_percent": 19.29,
+      "converged": true,
+      "scores": [
+        0.5842,
+        0.6854,
+        0.4286,
+        0.5278
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F07": {
+      "mean": 0.3191,
+      "std_dev": 0.0833,
+      "cv": 0.261,
+      "cv_percent": 26.1,
+      "converged": true,
+      "scores": [
+        0.2808,
+        0.2344,
+        0.4286,
+        0.3325
+      ],
+      "expert_count": 4,
+      "agreement": "基本一致"
+    },
+    "F17": {
+      "mean": 0.1244,
+      "std_dev": 0.0297,
+      "cv": 0.2384,
+      "cv_percent": 23.84,
+      "converged": true,
+      "scores": [
+        0.135,
+        0.0802,
+        0.1429,
+        0.1396
+      ],
+      "expert_count": 4,
+      "agreement": "基本一致"
+    },
+    "F08": {
+      "mean": 0.2488,
+      "std_dev": 0.0024,
+      "cv": 0.0094,
+      "cv_percent": 0.94,
+      "converged": true,
+      "scores": [
+        0.25,
+        0.2453,
+        0.25,
+        0.25
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F12": {
+      "mean": 0.2682,
+      "std_dev": 0.0365,
+      "cv": 0.1359,
+      "cv_percent": 13.59,
+      "converged": true,
+      "scores": [
+        0.25,
+        0.3229,
+        0.25,
+        0.25
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F13": {
+      "mean": 0.2341,
+      "std_dev": 0.0318,
+      "cv": 0.1358,
+      "cv_percent": 13.58,
+      "converged": true,
+      "scores": [
+        0.25,
+        0.1864,
+        0.25,
+        0.25
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F15": {
+      "mean": 0.2488,
+      "std_dev": 0.0024,
+      "cv": 0.0094,
+      "cv_percent": 0.94,
+      "converged": true,
+      "scores": [
+        0.25,
+        0.2453,
+        0.25,
+        0.25
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F09": {
+      "mean": 0.7362,
+      "std_dev": 0.0112,
+      "cv": 0.0153,
+      "cv_percent": 1.53,
+      "converged": true,
+      "scores": [
+        0.7306,
+        0.7531,
+        0.7306,
+        0.7306
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F10": {
+      "mean": 0.1873,
+      "std_dev": 0.0022,
+      "cv": 0.0117,
+      "cv_percent": 1.17,
+      "converged": true,
+      "scores": [
+        0.1884,
+        0.184,
+        0.1884,
+        0.1884
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    },
+    "F11": {
+      "mean": 0.0765,
+      "std_dev": 0.0091,
+      "cv": 0.1183,
+      "cv_percent": 11.83,
+      "converged": true,
+      "scores": [
+        0.081,
+        0.0629,
+        0.081,
+        0.081
+      ],
+      "expert_count": 4,
+      "agreement": "高度一致"
+    }
+  },
+  "overall_pass": true,
+  "expert_scores_summary": [
+    {
+      "expert_id": "E01",
+      "expert_name": "张伟教授",
+      "score_count": 6
+    },
+    {
+      "expert_id": "E02",
+      "expert_name": "李明博士",
+      "score_count": 6
+    },
+    {
+      "expert_id": "E03",
+      "expert_name": "王芳",
+      "score_count": 6
+    },
+    {
+      "expert_id": "E04",
+      "expert_name": "李佳欣",
+      "score_count": 6
+    }
+  ],
+  "timestamp": "2026-04-20T21:50:57.712291",
+  "ahp_consistency": {
+    "cr": 0.0772,
+    "lambda_max": 6.4786,
+    "ci": 0.0957,
+    "passed": true
+  }
+}

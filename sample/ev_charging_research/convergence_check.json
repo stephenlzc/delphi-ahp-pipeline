@@ -1,0 +1,297 @@
+{
+  "run_id": "run_20260420_174836_新能源汽车充电站选址与运营效率提升研究",
+  "project_title": "新能源汽车充电站选址与运营效率提升研究",
+  "threshold": 0.5,
+  "total_factors": 19,
+  "converged_count": 19,
+  "not_converged_count": 0,
+  "factor_results": {
+    "F01": {
+      "mean": 0.2262,
+      "std_dev": 0.0452,
+      "cv": 0.1998,
+      "cv_percent": 19.98,
+      "converged": true,
+      "scores": [
+        0.2046,
+        0.1958,
+        0.2781
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F03": {
+      "mean": 0.2837,
+      "std_dev": 0.0403,
+      "cv": 0.1419,
+      "cv_percent": 14.19,
+      "converged": true,
+      "scores": [
+        0.3012,
+        0.3123,
+        0.2377
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F13": {
+      "mean": 0.1535,
+      "std_dev": 0.0185,
+      "cv": 0.1208,
+      "cv_percent": 12.08,
+      "converged": true,
+      "scores": [
+        0.1749,
+        0.1431,
+        0.1425
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F14": {
+      "mean": 0.1308,
+      "std_dev": 0.0318,
+      "cv": 0.2428,
+      "cv_percent": 24.28,
+      "converged": true,
+      "scores": [
+        0.0974,
+        0.1606,
+        0.1344
+      ],
+      "expert_count": 3,
+      "agreement": "基本一致"
+    },
+    "F15": {
+      "mean": 0.0615,
+      "std_dev": 0.0093,
+      "cv": 0.1508,
+      "cv_percent": 15.08,
+      "converged": true,
+      "scores": [
+        0.0628,
+        0.0516,
+        0.07
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F16": {
+      "mean": 0.0853,
+      "std_dev": 0.0036,
+      "cv": 0.0419,
+      "cv_percent": 4.19,
+      "converged": true,
+      "scores": [
+        0.0825,
+        0.0893,
+        0.084
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F17": {
+      "mean": 0.0591,
+      "std_dev": 0.0155,
+      "cv": 0.262,
+      "cv_percent": 26.2,
+      "converged": true,
+      "scores": [
+        0.0766,
+        0.0473,
+        0.0533
+      ],
+      "expert_count": 3,
+      "agreement": "基本一致"
+    },
+    "F02": {
+      "mean": 0.4385,
+      "std_dev": 0.0764,
+      "cv": 0.1743,
+      "cv_percent": 17.43,
+      "converged": true,
+      "scores": [
+        0.3784,
+        0.5245,
+        0.4126
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F04": {
+      "mean": 0.327,
+      "std_dev": 0.0399,
+      "cv": 0.122,
+      "cv_percent": 12.2,
+      "converged": true,
+      "scores": [
+        0.342,
+        0.2818,
+        0.3573
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F05": {
+      "mean": 0.1519,
+      "std_dev": 0.0293,
+      "cv": 0.193,
+      "cv_percent": 19.3,
+      "converged": true,
+      "scores": [
+        0.1837,
+        0.126,
+        0.1459
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F06": {
+      "mean": 0.0826,
+      "std_dev": 0.0142,
+      "cv": 0.1715,
+      "cv_percent": 17.15,
+      "converged": true,
+      "scores": [
+        0.0959,
+        0.0677,
+        0.0842
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F07": {
+      "mean": 0.0,
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "cv_percent": 0.0,
+      "converged": true,
+      "scores": [],
+      "expert_count": 0,
+      "agreement": "数据不足"
+    },
+    "F08": {
+      "mean": 0.3134,
+      "std_dev": 0.0696,
+      "cv": 0.222,
+      "cv_percent": 22.2,
+      "converged": true,
+      "scores": [
+        0.3212,
+        0.3788,
+        0.2403
+      ],
+      "expert_count": 3,
+      "agreement": "基本一致"
+    },
+    "F09": {
+      "mean": 0.2396,
+      "std_dev": 0.0403,
+      "cv": 0.1682,
+      "cv_percent": 16.82,
+      "converged": true,
+      "scores": [
+        0.2796,
+        0.199,
+        0.2403
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F10": {
+      "mean": 0.2266,
+      "std_dev": 0.0413,
+      "cv": 0.1821,
+      "cv_percent": 18.21,
+      "converged": true,
+      "scores": [
+        0.1802,
+        0.2592,
+        0.2403
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F11": {
+      "mean": 0.0997,
+      "std_dev": 0.0221,
+      "cv": 0.2215,
+      "cv_percent": 22.15,
+      "converged": true,
+      "scores": [
+        0.0932,
+        0.0816,
+        0.1243
+      ],
+      "expert_count": 3,
+      "agreement": "基本一致"
+    },
+    "F12": {
+      "mean": 0.1208,
+      "std_dev": 0.0369,
+      "cv": 0.3053,
+      "cv_percent": 30.53,
+      "converged": true,
+      "scores": [
+        0.1259,
+        0.0816,
+        0.1548
+      ],
+      "expert_count": 3,
+      "agreement": "基本一致"
+    },
+    "F18": {
+      "mean": 0.8055,
+      "std_dev": 0.0481,
+      "cv": 0.0597,
+      "cv_percent": 5.97,
+      "converged": true,
+      "scores": [
+        0.75,
+        0.8333,
+        0.8333
+      ],
+      "expert_count": 3,
+      "agreement": "高度一致"
+    },
+    "F19": {
+      "mean": 0.1945,
+      "std_dev": 0.0481,
+      "cv": 0.2473,
+      "cv_percent": 24.73,
+      "converged": true,
+      "scores": [
+        0.25,
+        0.1667,
+        0.1667
+      ],
+      "expert_count": 3,
+      "agreement": "基本一致"
+    }
+  },
+  "overall_pass": true,
+  "expert_scores_summary": [
+    {
+      "expert_id": "E01",
+      "expert_name": "李华博士",
+      "score_count": 4
+    },
+    {
+      "expert_id": "E02",
+      "expert_name": "赵明教授",
+      "score_count": 4
+    },
+    {
+      "expert_id": "E03",
+      "expert_name": "王丽经理",
+      "score_count": 4
+    }
+  ],
+  "timestamp": "2026-04-20T19:30:51.957956",
+  "ahp_consistency": {
+    "cr": 0.1397,
+    "lambda_max": 4.3772,
+    "ci": 0.1257,
+    "passed": false
+  }
+}

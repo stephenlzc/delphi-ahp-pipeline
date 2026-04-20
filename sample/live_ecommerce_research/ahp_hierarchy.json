@@ -1,0 +1,148 @@
+{
+  "goal_layer": {
+    "name": "直播电商主播信任机制与消费者复购意愿研究",
+    "description": "基于本研究围绕“直播互动特征识别—主播信任机制分析—消费者购买与复购行为解释—营销优化建议提出”的逻辑展开。首先，从直播电商场景中提取主播特征、互动方式、产品展示形式和促销机制等关键要素，识别影响消费者判断的前端刺激因素。其次，从专业性、真实感、亲和力、回应速度和内容一致性等维度分析主播信任的形成机制。再次，研究主播信任如何影响消费者的首次购买决策、满意度形成与后续复购意愿。最后，结合研究结果提出直播运营、主播培训、内容设计和用户关系维护方面的改进建议。框架的直播电商主播信任机制与消费者复购意愿研究研究"
+  },
+  "criteria_layer": [
+    {
+      "id": "C01",
+      "name": "主播专业可信",
+      "description": "专业解释与可信表达"
+    },
+    {
+      "id": "C02",
+      "name": "信息透明披露",
+      "description": "信息充分真实可验证"
+    },
+    {
+      "id": "C03",
+      "name": "互动回应质量",
+      "description": "互动回应增强信任"
+    },
+    {
+      "id": "C04",
+      "name": "体验承诺一致",
+      "description": "宣传体验与履约一致"
+    },
+    {
+      "id": "C05",
+      "name": "运营治理能力",
+      "description": "团队机制与风险管控"
+    },
+    {
+      "id": "C06",
+      "name": "长期信任资本",
+      "description": "声誉积累与外部影响"
+    }
+  ],
+  "alternative_layer": [
+    {
+      "id": "F01",
+      "name": "专业可信度",
+      "description": "主播专业解释能力",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F02",
+      "name": "信息透明度",
+      "description": "产品信息披露充分",
+      "belongs_to_criteria": "C02"
+    },
+    {
+      "id": "F03",
+      "name": "局限性承认",
+      "description": "主动说明适用边界",
+      "belongs_to_criteria": "C02"
+    },
+    {
+      "id": "F04",
+      "name": "即时反馈质量",
+      "description": "回应质疑具体一致",
+      "belongs_to_criteria": "C03"
+    },
+    {
+      "id": "F05",
+      "name": "情感互动强度",
+      "description": "互动陪伴降低防备",
+      "belongs_to_criteria": "C03"
+    },
+    {
+      "id": "F06",
+      "name": "承诺体验一致性",
+      "description": "宣传与实际体验一致",
+      "belongs_to_criteria": "C04"
+    },
+    {
+      "id": "F07",
+      "name": "售后兑现能力",
+      "description": "售后承诺有效履行",
+      "belongs_to_criteria": "C04"
+    },
+    {
+      "id": "F08",
+      "name": "选品稳定性",
+      "description": "选品标准长期一致",
+      "belongs_to_criteria": "C05"
+    },
+    {
+      "id": "F09",
+      "name": "信任资本积累",
+      "description": "团队长期建立的可靠声誉与社会认可度",
+      "belongs_to_criteria": "C06"
+    },
+    {
+      "id": "F10",
+      "name": "外部性影响",
+      "description": "团队行为对领域或行业产生的溢出效应",
+      "belongs_to_criteria": "C06"
+    },
+    {
+      "id": "F11",
+      "name": "资源配置导向",
+      "description": "团队活动对产业资源流向的引导作用",
+      "belongs_to_criteria": "C06"
+    },
+    {
+      "id": "F12",
+      "name": "机制创新能力",
+      "description": "团队构建长效、系统性保障机制的能力",
+      "belongs_to_criteria": "C05"
+    },
+    {
+      "id": "F13",
+      "name": "责任可追溯性",
+      "description": "团队内部权责清晰、行为可追溯的程度",
+      "belongs_to_criteria": "C05"
+    },
+    {
+      "id": "F14",
+      "name": "信息披露规范性",
+      "description": "团队信息发布的标准性、透明性与可验证性",
+      "belongs_to_criteria": "C02"
+    },
+    {
+      "id": "F15",
+      "name": "风险分类管理",
+      "description": "团队针对不同风险采取差异化管控的能力",
+      "belongs_to_criteria": "C05"
+    },
+    {
+      "id": "F16",
+      "name": "专业知识展示",
+      "description": "详细讲解产品成分、功效和适用人群",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F17",
+      "name": "个人使用体验",
+      "description": "亲身试用产品并分享真实感受",
+      "belongs_to_criteria": "C04"
+    },
+    {
+      "id": "F18",
+      "name": "互动反馈机制",
+      "description": "直播中积极回应粉丝提问和疑虑",
+      "belongs_to_criteria": "C03"
+    }
+  ]
+}

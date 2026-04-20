@@ -1,0 +1,60 @@
+{
+  "xi_api": {
+    "key": "xi_api",
+    "name": "Xi-Api",
+    "adapter": "openai_chat_compatible",
+    "base_url": "https://api.******.ai/v1",
+    "api_key": "sk-••••••••••••••••••••••",
+    "default_model": "llmmodels",
+    "models": [
+      "llmmodels"
+    ],
+    "model_capabilities": {
+      "gpt-5.4": 8192
+    }
+  },
+  "minimax": {
+    "key": "minimax",
+    "name": "MiniMax CN",
+    "adapter": "openai_chat_compatible",
+    "base_url": "https://api.******.ai/v1",
+    "api_key": "eyJh**••••",
+    "default_model": "llmmodels",
+    "models": [
+      "llmmodels"
+    ],
+    "model_capabilities": {
+      "MiniMax-M2.7-highspeed": 8192
+    }
+  },
+  "deepseek_cn": {
+    "key": "deepseek_cn",
+    "name": "DeepSeek CN",
+    "adapter": "openai_chat_compatible",
+    "base_url": "https://api.******.ai/v1",
+    "api_key": "sk-12**••••",
+    "default_model": "llmmodels",
+    "models": [
+      "llmmodels"
+    ],
+    "model_capabilities": {
+      "deepseek-chat": 8192,
+      "deepseek-reasoner": 8192
+    }
+  },
+  "moonshot_cn": {
+    "key": "moonshot_cn",
+    "name": "Moonshot CN",
+    "adapter": "openai_chat_compatible",
+    "base_url": "https://api.******.ai/v1",
+    "api_key": "sk-••••••••••••••••••••••",
+    "default_model": "llmmodels",
+    "models": [
+      "llmmodels"
+    ],
+    "model_capabilities": {
+      "moonshot-v1-32k": 8192,
+      "kimi-k2-thinking": 8192
+    }
+  }
+}

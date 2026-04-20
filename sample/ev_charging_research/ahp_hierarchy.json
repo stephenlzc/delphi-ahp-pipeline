@@ -1,0 +1,144 @@
+{
+  "goal_layer": {
+    "name": "新能源汽车充电站选址与运营效率提升研究",
+    "description": "基于本研究围绕“城市出行需求识别—充电网络布局诊断—运营效率影响因素提炼—优化策略设计”的逻辑展开。首先，从城市交通结构、居民出行半径、停车资源分布和新能源汽车保有量等维度出发，识别充电需求的空间分布特征。其次，对现有充电站布局进行诊断，分析其在覆盖范围、排队时长、设备利用率、时段负荷差异和用户可达性等方面存在的问题。再次，结合用户行为、场地租金、电网负荷、配套商业、人流密度与政策支持等因素，构建充电站运营效率影响因素体系。最后，基于需求密度与运营效率协同视角，提出充电站选址优化、时段调度优化和商业协同提升方案。框架的新能源汽车充电站选址与运营效率提升研究研究"
+  },
+  "criteria_layer": [
+    {
+      "id": "C01",
+      "name": "需求特征与匹配性",
+      "description": "充电需求的时空分布规律及其与供给的匹配程"
+    },
+    {
+      "id": "C02",
+      "name": "运营效率与经济性",
+      "description": "充电站运营绩效与投资回报的综合表现"
+    },
+    {
+      "id": "C03",
+      "name": "资源约束与供给能力",
+      "description": "电网承载力与有效供给的硬性约束条件"
+    },
+    {
+      "id": "C04",
+      "name": "研究创新与决策支撑",
+      "description": "科研方法创新与政策建议的综合能力"
+    }
+  ],
+  "alternative_layer": [
+    {
+      "id": "F01",
+      "name": "需求时空分布动态性",
+      "description": "充电需求在时间和空间上的波动特征",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F02",
+      "name": "设备利用率峰谷差",
+      "description": "不同时段充电设备使用率的差异程度",
+      "belongs_to_criteria": "C02"
+    },
+    {
+      "id": "F03",
+      "name": "选址与需求匹配度",
+      "description": "充电站位置与实际需求分布的吻合程度",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F04",
+      "name": "投资回收周期",
+      "description": "充电站建设投资的资金回收时长",
+      "belongs_to_criteria": "C02"
+    },
+    {
+      "id": "F05",
+      "name": "用户时间成本",
+      "description": "用户寻找充电桩和等待充电的时间损耗",
+      "belongs_to_criteria": "C02"
+    },
+    {
+      "id": "F06",
+      "name": "站点类型差异化特征",
+      "description": "不同场景站点的需求规律和运营特点",
+      "belongs_to_criteria": "C02"
+    },
+    {
+      "id": "F07",
+      "name": "调控机制有效性",
+      "description": "动态定价、预约等调控手段的实际效果",
+      "belongs_to_criteria": "C1"
+    },
+    {
+      "id": "F08",
+      "name": "产学研合作能力",
+      "description": "与企业和平台开展合作研究",
+      "belongs_to_criteria": "C04"
+    },
+    {
+      "id": "F09",
+      "name": "多源数据融合能力",
+      "description": "整合实时动态数据进行分析",
+      "belongs_to_criteria": "C04"
+    },
+    {
+      "id": "F10",
+      "name": "创新模型构建能力",
+      "description": "开发新型选址与运营模型",
+      "belongs_to_criteria": "C04"
+    },
+    {
+      "id": "F11",
+      "name": "实证案例研究能力",
+      "description": "通过实地监测验证理论",
+      "belongs_to_criteria": "C04"
+    },
+    {
+      "id": "F12",
+      "name": "政策洞察与建议能力",
+      "description": "提出前瞻性政策影响决策",
+      "belongs_to_criteria": "C04"
+    },
+    {
+      "id": "F13",
+      "name": "需求时空波动性",
+      "description": "反映充电需求的潮汐式极化特征",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F14",
+      "name": "城市锚点依赖度",
+      "description": "需求对高频活动节点的依附程度",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F15",
+      "name": "边缘里程焦虑效应",
+      "description": "城郊因里程焦虑诱发的高补能需求",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F16",
+      "name": "车桩时空耦合度",
+      "description": "车辆停留与充电桩在时空上的匹配度",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F17",
+      "name": "有效需求转化率",
+      "description": "剔除无效需求后的真实充电需求占比",
+      "belongs_to_criteria": "C01"
+    },
+    {
+      "id": "F18",
+      "name": "区域电网承载力",
+      "description": "电网余量对充电站选址的硬约束",
+      "belongs_to_criteria": "C03"
+    },
+    {
+      "id": "F19",
+      "name": "有效供给真实度",
+      "description": "实际可用桩与名义供给桩的偏离度",
+      "belongs_to_criteria": "C03"
+    }
+  ]
+}

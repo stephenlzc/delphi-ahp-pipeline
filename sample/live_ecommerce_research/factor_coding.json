@@ -1,0 +1,229 @@
+{
+  "run_id": "run_20260420_194117_直播电商主播信任机制与消费者复购意愿研究",
+  "factors": [
+    {
+      "id": "F01",
+      "name": "专业可信度",
+      "description": "主播专业解释能力",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "id": "F02",
+      "name": "信息透明度",
+      "description": "产品信息披露充分",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "id": "F03",
+      "name": "局限性承认",
+      "description": "主动说明适用边界",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "id": "F04",
+      "name": "即时反馈质量",
+      "description": "回应质疑具体一致",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "id": "F05",
+      "name": "情感互动强度",
+      "description": "互动陪伴降低防备",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "id": "F06",
+      "name": "承诺体验一致性",
+      "description": "宣传与实际体验一致",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "id": "F07",
+      "name": "售后兑现能力",
+      "description": "售后承诺有效履行",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "id": "F08",
+      "name": "选品稳定性",
+      "description": "选品标准长期一致",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "id": "F09",
+      "name": "信任资本积累",
+      "description": "团队长期建立的可靠声誉与社会认可度",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "id": "F10",
+      "name": "外部性影响",
+      "description": "团队行为对领域或行业产生的溢出效应",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "id": "F11",
+      "name": "资源配置导向",
+      "description": "团队活动对产业资源流向的引导作用",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "id": "F12",
+      "name": "机制创新能力",
+      "description": "团队构建长效、系统性保障机制的能力",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "id": "F13",
+      "name": "责任可追溯性",
+      "description": "团队内部权责清晰、行为可追溯的程度",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "id": "F14",
+      "name": "信息披露规范性",
+      "description": "团队信息发布的标准性、透明性与可验证性",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "id": "F15",
+      "name": "风险分类管理",
+      "description": "团队针对不同风险采取差异化管控的能力",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "id": "F16",
+      "name": "专业知识展示",
+      "description": "详细讲解产品成分、功效和适用人群",
+      "source": "来自专家「李佳欣」(ID: E04)"
+    },
+    {
+      "id": "F17",
+      "name": "个人使用体验",
+      "description": "亲身试用产品并分享真实感受",
+      "source": "来自专家「李佳欣」(ID: E04)"
+    },
+    {
+      "id": "F18",
+      "name": "互动反馈机制",
+      "description": "直播中积极回应粉丝提问和疑虑",
+      "source": "来自专家「李佳欣」(ID: E04)"
+    }
+  ],
+  "factor_count": 18,
+  "raw_extracted": [
+    {
+      "name": "专业可信度",
+      "description": "主播专业解释能力",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "name": "信息透明度",
+      "description": "产品信息披露充分",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "name": "局限性承认",
+      "description": "主动说明适用边界",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "name": "即时反馈质量",
+      "description": "回应质疑具体一致",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "name": "情感互动强度",
+      "description": "互动陪伴降低防备",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "name": "承诺体验一致性",
+      "description": "宣传与实际体验一致",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "name": "售后兑现能力",
+      "description": "售后承诺有效履行",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "name": "选品稳定性",
+      "description": "选品标准长期一致",
+      "source": "来自专家「张伟教授」(ID: E01)"
+    },
+    {
+      "name": "信任资本积累",
+      "description": "团队长期建立的可靠声誉与社会认可度",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "name": "外部性影响",
+      "description": "团队行为对领域或行业产生的溢出效应",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "name": "资源配置导向",
+      "description": "团队活动对产业资源流向的引导作用",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "name": "机制创新能力",
+      "description": "团队构建长效、系统性保障机制的能力",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "name": "责任可追溯性",
+      "description": "团队内部权责清晰、行为可追溯的程度",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "name": "信息披露规范性",
+      "description": "团队信息发布的标准性、透明性与可验证性",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "name": "风险分类管理",
+      "description": "团队针对不同风险采取差异化管控的能力",
+      "source": "来自专家「王芳」(ID: E03)"
+    },
+    {
+      "name": "专业知识展示",
+      "description": "详细讲解产品成分、功效和适用人群",
+      "source": "来自专家「李佳欣」(ID: E04)"
+    },
+    {
+      "name": "个人使用体验",
+      "description": "亲身试用产品并分享真实感受",
+      "source": "来自专家「李佳欣」(ID: E04)"
+    },
+    {
+      "name": "互动反馈机制",
+      "description": "直播中积极回应粉丝提问和疑虑",
+      "source": "来自专家「李佳欣」(ID: E04)"
+    }
+  ],
+  "extraction_models": [
+    {
+      "expert_id": "E01",
+      "expert_name": "张伟教授",
+      "model": "gpt-5.4"
+    },
+    {
+      "expert_id": "E02",
+      "expert_name": "李明博士",
+      "model": "MiniMax-M2.7-highspeed"
+    },
+    {
+      "expert_id": "E03",
+      "expert_name": "王芳",
+      "model": "deepseek-chat"
+    },
+    {
+      "expert_id": "E04",
+      "expert_name": "李佳欣",
+      "model": "moonshot-v1-32k"
+    }
+  ],
+  "timestamp": "2026-04-20T20:59:14.779242"
+}

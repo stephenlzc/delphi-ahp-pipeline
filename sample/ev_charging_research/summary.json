@@ -1,0 +1,16 @@
+{
+  "run_id": "run_20260420_174836_新能源汽车充电站选址与运营效率提升研究",
+  "title": "新能源汽车充电站选址与运营效率提升研究",
+  "status": "completed",
+  "created_at": "2026-04-20T19:23:41.106615",
+  "artifacts": [
+    "project.json",
+    "interview_records.json",
+    "factor_coding.json",
+    "ahp_hierarchy.json",
+    "criteria_comparisons.json",
+    "alternative_scores.json",
+    "ahp_results.json",
+    "analysis_results.md"
+  ]
+}

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直播电商主播信任机制与消费者复购意愿研究 - Delphi-AHP 研究报告</title>
+    <style>
+        :root {
+            --bg-base: #f9fafb;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --accent: #059669;
+            --accent-light: #d1fae5;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --radius: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Geist", "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            color: white;
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .header .meta {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-tab:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .nav-tab.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .badge-warning {
+            background: #fef3c7;
+            color: var(--warning);
+        }
+
+        .badge-danger {
+            background: #fee2e2;
+            color: var(--danger);
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            background: #f3f4f6;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .data-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table tr:hover {
+            background: #f9fafb;
+        }
+
+        /* Grid Layout */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Progress Bars */
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 100px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 100px;
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Ranking List */
+        .ranking-list {
+            list-style: none;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-badge {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .rank-1 { background: #fef3c7; color: #d97706; }
+        .rank-2 { background: #f3f4f6; color: #6b7280; }
+        .rank-3 { background: #fed7aa; color: #ea580c; }
+        .rank-default { background: #f3f4f6; color: #9ca3af; }
+
+        .ranking-content {
+            flex: 1;
+        }
+
+        .ranking-name {
+            font-weight: 600;
+        }
+
+        .ranking-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .ranking-score {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Section Content */
+        .section-content {
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        /* Criteria Bars */
+        .criteria-bar {
+            margin-bottom: 1.5rem;
+        }
+
+        .criteria-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        /* Expert Cards */
+        .expert-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+        }
+
+        .expert-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #059669, #10b981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .expert-info {
+            flex: 1;
+        }
+
+        .expert-name {
+            font-weight: 600;
+        }
+
+        .expert-role {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .header {
+                padding: 2rem 1rem;
+                border-radius: 0 0 1rem 1rem;
+            }
+            .header h1 {
+                font-size: 1.75rem;
+            }
+            .nav-tabs {
+                justify-content: center;
+            }
+            .data-table {
+                font-size: 0.875rem;
+            }
+            .data-table th, .data-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Print */
+        @media print {
+            .nav-tabs, .no-print { display: none !important; }
+            .card { break-inside: avoid; }
+            .header { background: #111827 !important; color: white !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>直播电商主播信任机制与消费者复购意愿研究</h1>
+        <p class="subtitle">Delphi-AHP 研究分析报告</p>
+        <p class="meta">生成时间: 2026-04-20 21:53</p>
+    </div>
+
+    <div class="container">
+        <nav class="nav-tabs no-print">
+            <button class="nav-tab active" onclick="showSection('overview')">研究概览</button>
+            <button class="nav-tab" onclick="showSection('criteria')">准则层</button>
+            <button class="nav-tab" onclick="showSection('alternatives')">方案层</button>
+            <button class="nav-tab" onclick="showSection('convergence')">收敛检验</button>
+            <button class="nav-tab" onclick="showSection('sensitivity')">敏感性</button>
+            <button class="nav-tab" onclick="showSection('experts')">专家团队</button>
+        </nav>
+
+        <!-- Overview Section -->
+        <div id="overview" class="section-content active">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">研究背景</h2>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.8;">直播电商已成为数字零售的重要渠道。相比传统图文电商，直播电商通过实时互动、场景化展示和即时促销显著提升了交易转化效率。然而，直播成交并不必然意味着稳定复购，很多商家面临“首单高、回购低”的问题。在直播场景中，主播不仅是信息传递者，更是消费者形成信任判断的重要中介。消费者往往并不具备充分的产品验证能力，因此更容易通过主播语言、情绪表达、专业知识和互动反馈来判断产品是否可靠。主播一旦建立起稳定信任，便可能对复购、推荐和品牌忠诚形成持续影响。但现实中，部分直播间依赖夸张促销、情绪煽动或短期刺激完成销售，却忽视了长期信任关系的构建，导致消费者在首次购买后难以形成持续消费意愿。因此，研究主播信任机制及其对复购意愿的影响，具有重要的营销实践价值。</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">研究目的</h2>
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.8;">本研究旨在揭示直播电商情境下主播信任形成的关键机制，并分析其对消费者复购意愿的作用路径。具体而言，研究希望实现以下目的：第一，识别直播互动中影响消费者信任判断的核心因素；第二，分析主播信任在消费者首次购买与复购意愿之间所起的作用；第三，区分不同信任维度对复购意愿的影响强弱；第四，基于研究结果提出提升复购率与用户关系质量的直播运营策略。</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-experts">0</div>
+                    <div class="stat-label">专家数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-criteria">0</div>
+                    <div class="stat-label">准则数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-factors">0</div>
+                    <div class="stat-label">因素数量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-cr">-</div>
+                    <div class="stat-label">一致性CR</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">关键因素 Top 5</h2>
+                </div>
+                <ul class="ranking-list" id="top5-list"></ul>
+            </div>
+        </div>
+
+        <!-- Criteria Section -->
+        <div id="criteria" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">准则层权重</h2>
+                    <span class="badge badge-success" id="cr-badge">CR &le; 0.10</span>
+                </div>
+                <div id="criteria-bars"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">准则层权重详情</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>准则名称</th>
+                            <th>权重</th>
+                            <th>λmax</th>
+                            <th>CI</th>
+                            <th>CR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="criteria-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Alternatives Section -->
+        <div id="alternatives" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">因素综合权重排名</h2>
+                </div>
+                <ul class="ranking-list" id="full-ranking-list"></ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">权重分布</h2>
+                </div>
+                <div id="weight-distribution"></div>
+            </div>
+        </div>
+
+        <!-- Convergence Section -->
+        <div id="convergence" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">收敛检验结果</h2>
+                </div>
+                <div id="convergence-summary"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">各因素收敛状态</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>因素</th>
+                            <th>均值</th>
+                            <th>标准差</th>
+                            <th>CV</th>
+                            <th>一致性</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody id="convergence-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sensitivity Section -->
+        <div id="sensitivity" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">敏感性分析结果</h2>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    分析方法：对准则权重和方案得分分别进行 &plusmn;10% 的变幅测试
+                </p>
+                <div id="sensitivity-summary"></div>
+            </div>
+        </div>
+
+        <!-- Experts Section -->
+        <div id="experts" class="section-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">专家团队</h2>
+                </div>
+                <div id="expert-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>本报告由 Delphi-AHP 流程自动生成</p>
+        <p>2026-04-20 21:53:48</p>
+    </div>
+
+    <script>
+        // Report Data
+        const reportData = {"project_title":"直播电商主播信任机制与消费者复购意愿研究","framework":"本研究围绕“直播互动特征识别—主播信任机制分析—消费者购买与复购行为解释—营销优化建议提出”的逻辑展开。首先，从直播电商场景中提取主播特征、互动方式、产品展示形式和促销机制等关键要素，识别影响消费者判断的前端刺激因素。其次，从专业性、真实感、亲和力、回应速度和内容一致性等维度分析主播信任的形成机制。再次，研究主播信任如何影响消费者的首次购买决策、满意度形成与后续复购意愿。最后，结合研究结果提出直播运营、主播培训、内容设计和用户关系维护方面的改进建议。","background":"直播电商已成为数字零售的重要渠道。相比传统图文电商，直播电商通过实时互动、场景化展示和即时促销显著提升了交易转化效率。然而，直播成交并不必然意味着稳定复购，很多商家面临“首单高、回购低”的问题。在直播场景中，主播不仅是信息传递者，更是消费者形成信任判断的重要中介。消费者往往并不具备充分的产品验证能力，因此更容易通过主播语言、情绪表达、专业知识和互动反馈来判断产品是否可靠。主播一旦建立起稳定信任，便可能对复购、推荐和品牌忠诚形成持续影响。但现实中，部分直播间依赖夸张促销、情绪煽动或短期刺激完成销售，却忽视了长期信任关系的构建，导致消费者在首次购买后难以形成持续消费意愿。因此，研究主播信任机制及其对复购意愿的影响，具有重要的营销实践价值。","purpose":"本研究旨在揭示直播电商情境下主播信任形成的关键机制，并分析其对消费者复购意愿的作用路径。具体而言，研究希望实现以下目的：第一，识别直播互动中影响消费者信任判断的核心因素；第二，分析主播信任在消费者首次购买与复购意愿之间所起的作用；第三，区分不同信任维度对复购意愿的影响强弱；第四，基于研究结果提出提升复购率与用户关系质量的直播运营策略。","experts":[{"id":"E01","name":"张伟教授","role":"计算机科学系主任","org_type":"高校","expertise":"人工智能与大数据"},{"id":"E02","name":"李明博士","role":"市场研究总监","org_type":"企业","expertise":"市场分析与战略"},{"id":"E03","name":"王芳","role":"政策研究室主任","org_type":"政府机构","expertise":"产业政策研究"},{"id":"E04","name":"李佳欣","role":"头部带货主播","org_type":"MCN","expertise":"美妆类主播"}],"criteria":[{"id":"C01","name":"主播专业可信","description":"专业解释与可信表达"},{"id":"C02","name":"信息透明披露","description":"信息充分真实可验证"},{"id":"C03","name":"互动回应质量","description":"互动回应增强信任"},{"id":"C04","name":"体验承诺一致","description":"宣传体验与履约一致"},{"id":"C05","name":"运营治理能力","description":"团队机制与风险管控"},{"id":"C06","name":"长期信任资本","description":"声誉积累与外部影响"}],"criteria_weights":[{"id":"C01","name":"主播专业可信","weight":0.3444,"lambda_max":6.4786,"ci":0.0957,"cr":0.0772,"consistency_passed":true},{"id":"C02","name":"信息透明披露","weight":0.2486,"lambda_max":6.4786,"ci":0.0957,"cr":0.0772,"consistency_passed":true},{"id":"C03","name":"互动回应质量","weight":0.1118,"lambda_max":6.4786,"ci":0.0957,"cr":0.0772,"consistency_passed":true},{"id":"C04","name":"体验承诺一致","weight":0.1761,"lambda_max":6.4786,"ci":0.0957,"cr":0.0772,"consistency_passed":true},{"id":"C05","name":"运营治理能力","weight":0.0577,"lambda_max":6.4786,"ci":0.0957,"cr":0.0772,"consistency_passed":true},{"id":"C06","name":"长期信任资本","weight":0.0614,"lambda_max":6.4786,"ci":0.0957,"cr":0.0772,"consistency_passed":true}],"criteria_map":{"C01":"主播专业可信","C02":"信息透明披露","C03":"互动回应质量","C04":"体验承诺一致","C05":"运营治理能力","C06":"长期信任资本"},"alternatives":[{"id":"F01","name":"专业可信度","description":"主播专业解释能力","belongs_to_criteria":"C01"},{"id":"F02","name":"信息透明度","description":"产品信息披露充分","belongs_to_criteria":"C02"},{"id":"F03","name":"局限性承认","description":"主动说明适用边界","belongs_to_criteria":"C02"},{"id":"F04","name":"即时反馈质量","description":"回应质疑具体一致","belongs_to_criteria":"C03"},{"id":"F05","name":"情感互动强度","description":"互动陪伴降低防备","belongs_to_criteria":"C03"},{"id":"F06","name":"承诺体验一致性","description":"宣传与实际体验一致","belongs_to_criteria":"C04"},{"id":"F07","name":"售后兑现能力","description":"售后承诺有效履行","belongs_to_criteria":"C04"},{"id":"F08","name":"选品稳定性","description":"选品标准长期一致","belongs_to_criteria":"C05"},{"id":"F09","name":"信任资本积累","description":"团队长期建立的可靠声誉与社会认可度","belongs_to_criteria":"C06"},{"id":"F10","name":"外部性影响","description":"团队行为对领域或行业产生的溢出效应","belongs_to_criteria":"C06"},{"id":"F11","name":"资源配置导向","description":"团队活动对产业资源流向的引导作用","belongs_to_criteria":"C06"},{"id":"F12","name":"机制创新能力","description":"团队构建长效、系统性保障机制的能力","belongs_to_criteria":"C05"},{"id":"F13","name":"责任可追溯性","description":"团队内部权责清晰、行为可追溯的程度","belongs_to_criteria":"C05"},{"id":"F14","name":"信息披露规范性","description":"团队信息发布的标准性、透明性与可验证性","belongs_to_criteria":"C02"},{"id":"F15","name":"风险分类管理","description":"团队针对不同风险采取差异化管控的能力","belongs_to_criteria":"C05"},{"id":"F16","name":"专业知识展示","description":"详细讲解产品成分、功效和适用人群","belongs_to_criteria":"C01"},{"id":"F17","name":"个人使用体验","description":"亲身试用产品并分享真实感受","belongs_to_criteria":"C04"},{"id":"F18","name":"互动反馈机制","description":"直播中积极回应粉丝提问和疑虑","belongs_to_criteria":"C03"}],"sorted_alts":[{"id":"F01","name":"专业可信度","description":"主播专业解释能力","belongs_to_criteria":"C01"},{"id":"F16","name":"专业知识展示","description":"详细讲解产品成分、功效和适用人群","belongs_to_criteria":"C01"},{"id":"F06","name":"承诺体验一致性","description":"宣传与实际体验一致","belongs_to_criteria":"C04"},{"id":"F02","name":"信息透明度","description":"产品信息披露充分","belongs_to_criteria":"C02"},{"id":"F14","name":"信息披露规范性","description":"团队信息发布的标准性、透明性与可验证性","belongs_to_criteria":"C02"},{"id":"F03","name":"局限性承认","description":"主动说明适用边界","belongs_to_criteria":"C02"},{"id":"F04","name":"即时反馈质量","description":"回应质疑具体一致","belongs_to_criteria":"C03"},{"id":"F07","name":"售后兑现能力","description":"售后承诺有效履行","belongs_to_criteria":"C04"},{"id":"F09","name":"信任资本积累","description":"团队长期建立的可靠声誉与社会认可度","belongs_to_criteria":"C06"},{"id":"F18","name":"互动反馈机制","description":"直播中积极回应粉丝提问和疑虑","belongs_to_criteria":"C03"},{"id":"F05","name":"情感互动强度","description":"互动陪伴降低防备","belongs_to_criteria":"C03"},{"id":"F17","name":"个人使用体验","description":"亲身试用产品并分享真实感受","belongs_to_criteria":"C04"},{"id":"F12","name":"机制创新能力","description":"团队构建长效、系统性保障机制的能力","belongs_to_criteria":"C05"},{"id":"F08","name":"选品稳定性","description":"选品标准长期一致","belongs_to_criteria":"C05"},{"id":"F15","name":"风险分类管理","description":"团队针对不同风险采取差异化管控的能力","belongs_to_criteria":"C05"},{"id":"F13","name":"责任可追溯性","description":"团队内部权责清晰、行为可追溯的程度","belongs_to_criteria":"C05"},{"id":"F10","name":"外部性影响","description":"团队行为对领域或行业产生的溢出效应","belongs_to_criteria":"C06"},{"id":"F11","name":"资源配置导向","description":"团队活动对产业资源流向的引导作用","belongs_to_criteria":"C06"}],"ranking":[{"rank":1,"id":"F01","weight":0.1722},{"rank":2,"id":"F16","weight":0.1722},{"rank":3,"id":"F06","weight":0.0985},{"rank":4,"id":"F02","weight":0.0984},{"rank":5,"id":"F14","weight":0.0819},{"rank":6,"id":"F03","weight":0.0682},{"rank":7,"id":"F04","weight":0.0651},{"rank":8,"id":"F07","weight":0.0559},{"rank":9,"id":"F09","weight":0.0452},{"rank":10,"id":"F18","weight":0.025},{"rank":11,"id":"F05","weight":0.0218},{"rank":12,"id":"F17","weight":0.0218},{"rank":13,"id":"F12","weight":0.0154},{"rank":14,"id":"F08","weight":0.0144},{"rank":15,"id":"F15","weight":0.0144},{"rank":16,"id":"F13","weight":0.0135},{"rank":17,"id":"F10","weight":0.0115},{"rank":18,"id":"F11","weight":0.0047}],"convergence_data":{"run_id":"run_20260420_194117_直播电商主播信任机制与消费者复购意愿研究","project_title":"直播电商主播信任机制与消费者复购意愿研究","threshold":0.5,"total_factors":18,"converged_count":18,"not_converged_count":0,"factor_results":{"F01":{"mean":0.5,"std_dev":0.0,"cv":0.0,"cv_percent":0.0,"converged":true,"scores":[0.5,0.5,0.5,0.5],"expert_count":4,"agreement":"高度一致"},"F16":{"mean":0.5,"std_dev":0.0,"cv":0.0,"cv_percent":0.0,"converged":true,"scores":[0.5,0.5,0.5,0.5],"expert_count":4,"agreement":"高度一致"},"F02":{"mean":0.3967,"std_dev":0.0732,"cv":0.1844,"cv_percent":18.44,"converged":true,"scores":[0.46,0.3333,0.46,0.3333],"expert_count":4,"agreement":"高度一致"},"F03":{"mean":0.2772,"std_dev":0.0648,"cv":0.2337,"cv_percent":23.37,"converged":true,"scores":[0.2211,0.3333,0.2211,0.3333],"expert_count":4,"agreement":"基本一致"},"F14":{"mean":0.3261,"std_dev":0.0083,"cv":0.0255,"cv_percent":2.55,"converged":true,"scores":[0.3189,0.3333,0.3189,0.3333],"expert_count":4,"agreement":"高度一致"},"F04":{"mean":0.5796,"std_dev":0.0844,"cv":0.1456,"cv_percent":14.56,"converged":true,"scores":[0.46,0.6586,0.6,0.6],"expert_count":4,"agreement":"高度一致"},"F05":{"mean":0.1943,"std_dev":0.0273,"cv":0.1405,"cv_percent":14.05,"converged":true,"scores":[0.2211,0.1562,0.2,0.2],"expert_count":4,"agreement":"高度一致"},"F18":{"mean":0.226,"std_dev":0.0623,"cv":0.2757,"cv_percent":27.57,"converged":true,"scores":[0.3189,0.1852,0.2,0.2],"expert_count":4,"agreement":"基本一致"},"F06":{"mean":0.5565,"std_dev":0.1073,"cv":0.1929,"cv_percent":19.29,"converged":true,"scores":[0.5842,0.6854,0.4286,0.5278],"expert_count":4,"agreement":"高度一致"},"F07":{"mean":0.3191,"std_dev":0.0833,"cv":0.261,"cv_percent":26.1,"converged":true,"scores":[0.2808,0.2344,0.4286,0.3325],"expert_count":4,"agreement":"基本一致"},"F17":{"mean":0.1244,"std_dev":0.0297,"cv":0.2384,"cv_percent":23.84,"converged":true,"scores":[0.135,0.0802,0.1429,0.1396],"expert_count":4,"agreement":"基本一致"},"F08":{"mean":0.2488,"std_dev":0.0024,"cv":0.0094,"cv_percent":0.94,"converged":true,"scores":[0.25,0.2453,0.25,0.25],"expert_count":4,"agreement":"高度一致"},"F12":{"mean":0.2682,"std_dev":0.0365,"cv":0.1359,"cv_percent":13.59,"converged":true,"scores":[0.25,0.3229,0.25,0.25],"expert_count":4,"agreement":"高度一致"},"F13":{"mean":0.2341,"std_dev":0.0318,"cv":0.1358,"cv_percent":13.58,"converged":true,"scores":[0.25,0.1864,0.25,0.25],"expert_count":4,"agreement":"高度一致"},"F15":{"mean":0.2488,"std_dev":0.0024,"cv":0.0094,"cv_percent":0.94,"converged":true,"scores":[0.25,0.2453,0.25,0.25],"expert_count":4,"agreement":"高度一致"},"F09":{"mean":0.7362,"std_dev":0.0112,"cv":0.0153,"cv_percent":1.53,"converged":true,"scores":[0.7306,0.7531,0.7306,0.7306],"expert_count":4,"agreement":"高度一致"},"F10":{"mean":0.1873,"std_dev":0.0022,"cv":0.0117,"cv_percent":1.17,"converged":true,"scores":[0.1884,0.184,0.1884,0.1884],"expert_count":4,"agreement":"高度一致"},"F11":{"mean":0.0765,"std_dev":0.0091,"cv":0.1183,"cv_percent":11.83,"converged":true,"scores":[0.081,0.0629,0.081,0.081],"expert_count":4,"agreement":"高度一致"}},"overall_pass":true,"expert_scores_summary":[{"expert_id":"E01","expert_name":"张伟教授","score_count":6},{"expert_id":"E02","expert_name":"李明博士","score_count":6},{"expert_id":"E03","expert_name":"王芳","score_count":6},{"expert_id":"E04","expert_name":"李佳欣","score_count":6}],"timestamp":"2026-04-20T21:50:57.712291","ahp_consistency":{"cr":0.0772,"lambda_max":6.4786,"ci":0.0957,"passed":true}},"sensitivity_data":{"run_id":"run_20260420_194117_直播电商主播信任机制与消费者复购意愿研究","criteria_sensitivity":{"original_weights":{"C01":0.3444,"C02":0.2486,"C03":0.1118,"C04":0.1761,"C05":0.0577,"C06":0.0614},"original_ranking":[{"id":"F01","weight":0.2583,"rank":1},{"id":"F16","weight":0.2583,"rank":2},{"id":"F02","weight":0.1864,"rank":3},{"id":"F03","weight":0.1864,"rank":4},{"id":"F14","weight":0.1864,"rank":5},{"id":"F06","weight":0.1321,"rank":6},{"id":"F07","weight":0.1321,"rank":7},{"id":"F17","weight":0.1321,"rank":8},{"id":"F04","weight":0.0839,"rank":9},{"id":"F05","weight":0.0839,"rank":10},{"id":"F18","weight":0.0839,"rank":11},{"id":"F09","weight":0.046,"rank":12},{"id":"F10","weight":0.046,"rank":13},{"id":"F11","weight":0.046,"rank":14},{"id":"F08","weight":0.0433,"rank":15},{"id":"F12","weight":0.0433,"rank":16},{"id":"F13","weight":0.0433,"rank":17},{"id":"F15","weight":0.0433,"rank":18}],"variation_percent":10.0,"scenarios":[{"criteria_id":"C01","criteria_name":"主播专业可信","original_weight":0.3444,"increase_scenario":{"new_weight":0.3662,"weight_change_pct":6.34,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_weight":0.321,"weight_change_pct":-6.79,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"criteria_id":"C02","criteria_name":"信息透明披露","original_weight":0.2486,"increase_scenario":{"new_weight":0.2668,"weight_change_pct":7.33,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_weight":0.2294,"weight_change_pct":-7.71,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"criteria_id":"C03","criteria_name":"互动回应质量","original_weight":0.1118,"increase_scenario":{"new_weight":0.1217,"weight_change_pct":8.78,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_weight":0.1018,"weight_change_pct":-8.98,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"criteria_id":"C04","criteria_name":"体验承诺一致","original_weight":0.1761,"increase_scenario":{"new_weight":0.1904,"weight_change_pct":8.1,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_weight":0.1614,"weight_change_pct":-8.39,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"criteria_id":"C05","criteria_name":"运营治理能力","original_weight":0.0577,"increase_scenario":{"new_weight":0.0632,"weight_change_pct":9.37,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":16,"rank_change":-4,"stable":false},"F10":{"original_rank":13,"new_rank":17,"rank_change":-4,"stable":false},"F11":{"original_rank":14,"new_rank":18,"rank_change":-4,"stable":false},"F08":{"original_rank":15,"new_rank":12,"rank_change":3,"stable":false},"F12":{"original_rank":16,"new_rank":13,"rank_change":3,"stable":false},"F13":{"original_rank":17,"new_rank":14,"rank_change":3,"stable":false},"F15":{"original_rank":18,"new_rank":15,"rank_change":3,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_weight":0.0523,"weight_change_pct":-9.48,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"criteria_id":"C06","criteria_name":"长期信任资本","original_weight":0.0614,"increase_scenario":{"new_weight":0.0671,"weight_change_pct":9.33,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_weight":0.0556,"weight_change_pct":-9.44,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":16,"rank_change":-4,"stable":false},"F10":{"original_rank":13,"new_rank":17,"rank_change":-4,"stable":false},"F11":{"original_rank":14,"new_rank":18,"rank_change":-4,"stable":false},"F08":{"original_rank":15,"new_rank":12,"rank_change":3,"stable":false},"F12":{"original_rank":16,"new_rank":13,"rank_change":3,"stable":false},"F13":{"original_rank":17,"new_rank":14,"rank_change":3,"stable":false},"F15":{"original_rank":18,"new_rank":15,"rank_change":3,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}}]},"score_sensitivity":{"original_scores":{},"original_ranking":[{"id":"F01","weight":0.2583,"rank":1},{"id":"F16","weight":0.2583,"rank":2},{"id":"F02","weight":0.1865,"rank":3},{"id":"F03","weight":0.1865,"rank":4},{"id":"F14","weight":0.1865,"rank":5},{"id":"F06","weight":0.1321,"rank":6},{"id":"F07","weight":0.1321,"rank":7},{"id":"F17","weight":0.1321,"rank":8},{"id":"F04","weight":0.0838,"rank":9},{"id":"F05","weight":0.0838,"rank":10},{"id":"F18","weight":0.0838,"rank":11},{"id":"F09","weight":0.0461,"rank":12},{"id":"F10","weight":0.0461,"rank":13},{"id":"F11","weight":0.0461,"rank":14},{"id":"F08","weight":0.0433,"rank":15},{"id":"F12","weight":0.0433,"rank":16},{"id":"F13","weight":0.0433,"rank":17},{"id":"F15","weight":0.0433,"rank":18}],"variation_percent":10.0,"scenarios":[{"alternative_id":"F01","alternative_name":"专业可信度","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":5,"rank_change":-4,"stable":false},"F16":{"original_rank":2,"new_rank":1,"rank_change":1,"stable":false},"F02":{"original_rank":3,"new_rank":2,"rank_change":1,"stable":false},"F03":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F14":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F16","rank":1},{"id":"F02","rank":2},{"id":"F03","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":5,"rank_change":-4,"stable":false},"F16":{"original_rank":2,"new_rank":1,"rank_change":1,"stable":false},"F02":{"original_rank":3,"new_rank":2,"rank_change":1,"stable":false},"F03":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F14":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F16","rank":1},{"id":"F02","rank":2},{"id":"F03","rank":3}]}},{"alternative_id":"F02","alternative_name":"信息透明度","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":8,"rank_change":-5,"stable":false},"F03":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F14":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F06":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F07":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F03","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":8,"rank_change":-5,"stable":false},"F03":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F14":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F06":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F07":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F03","rank":3}]}},{"alternative_id":"F03","alternative_name":"局限性承认","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":8,"rank_change":-4,"stable":false},"F14":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F06":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F07":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":8,"rank_change":-4,"stable":false},"F14":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F06":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F07":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F04","alternative_name":"即时反馈质量","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":11,"rank_change":-2,"stable":false},"F05":{"original_rank":10,"new_rank":9,"rank_change":1,"stable":false},"F18":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":11,"rank_change":-2,"stable":false},"F05":{"original_rank":10,"new_rank":9,"rank_change":1,"stable":false},"F18":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F05","alternative_name":"情感互动强度","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":11,"rank_change":-1,"stable":false},"F18":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":11,"rank_change":-1,"stable":false},"F18":{"original_rank":11,"new_rank":10,"rank_change":1,"stable":false},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F06","alternative_name":"承诺体验一致性","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":8,"rank_change":-2,"stable":false},"F07":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":8,"rank_change":-2,"stable":false},"F07":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F07","alternative_name":"售后兑现能力","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":8,"rank_change":-1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":8,"rank_change":-1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F08","alternative_name":"选品稳定性","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":18,"rank_change":-3,"stable":false},"F12":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":18,"rank_change":-3,"stable":false},"F12":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F09","alternative_name":"信任资本积累","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":18,"rank_change":-6,"stable":false},"F10":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F11":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":14,"rank_change":1,"stable":false},"F12":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":18,"rank_change":-6,"stable":false},"F10":{"original_rank":13,"new_rank":12,"rank_change":1,"stable":false},"F11":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":14,"rank_change":1,"stable":false},"F12":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F10","alternative_name":"外部性影响","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":18,"rank_change":-5,"stable":false},"F11":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":14,"rank_change":1,"stable":false},"F12":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":18,"rank_change":-5,"stable":false},"F11":{"original_rank":14,"new_rank":13,"rank_change":1,"stable":false},"F08":{"original_rank":15,"new_rank":14,"rank_change":1,"stable":false},"F12":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F11","alternative_name":"资源配置导向","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":18,"rank_change":-4,"stable":false},"F08":{"original_rank":15,"new_rank":14,"rank_change":1,"stable":false},"F12":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":18,"rank_change":-4,"stable":false},"F08":{"original_rank":15,"new_rank":14,"rank_change":1,"stable":false},"F12":{"original_rank":16,"new_rank":15,"rank_change":1,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F12","alternative_name":"机制创新能力","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":18,"rank_change":-2,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":18,"rank_change":-2,"stable":false},"F13":{"original_rank":17,"new_rank":16,"rank_change":1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F13","alternative_name":"责任可追溯性","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":18,"rank_change":-1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":18,"rank_change":-1,"stable":false},"F15":{"original_rank":18,"new_rank":17,"rank_change":1,"stable":false}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F14","alternative_name":"信息披露规范性","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":8,"rank_change":-3,"stable":false},"F06":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F07":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":8,"rank_change":-3,"stable":false},"F06":{"original_rank":6,"new_rank":5,"rank_change":1,"stable":false},"F07":{"original_rank":7,"new_rank":6,"rank_change":1,"stable":false},"F17":{"original_rank":8,"new_rank":7,"rank_change":1,"stable":false},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F15","alternative_name":"风险分类管理","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F16","alternative_name":"专业知识展示","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":5,"rank_change":-3,"stable":false},"F02":{"original_rank":3,"new_rank":2,"rank_change":1,"stable":false},"F03":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F14":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F02","rank":2},{"id":"F03","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":5,"rank_change":-3,"stable":false},"F02":{"original_rank":3,"new_rank":2,"rank_change":1,"stable":false},"F03":{"original_rank":4,"new_rank":3,"rank_change":1,"stable":false},"F14":{"original_rank":5,"new_rank":4,"rank_change":1,"stable":false},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F02","rank":2},{"id":"F03","rank":3}]}},{"alternative_id":"F17","alternative_name":"个人使用体验","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}},{"alternative_id":"F18","alternative_name":"互动反馈机制","original_score":7.0,"increase_scenario":{"new_score":7.7,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]},"decrease_scenario":{"new_score":6.3,"ranking_changes":{"F01":{"original_rank":1,"new_rank":1,"rank_change":0,"stable":true},"F16":{"original_rank":2,"new_rank":2,"rank_change":0,"stable":true},"F02":{"original_rank":3,"new_rank":3,"rank_change":0,"stable":true},"F03":{"original_rank":4,"new_rank":4,"rank_change":0,"stable":true},"F14":{"original_rank":5,"new_rank":5,"rank_change":0,"stable":true},"F06":{"original_rank":6,"new_rank":6,"rank_change":0,"stable":true},"F07":{"original_rank":7,"new_rank":7,"rank_change":0,"stable":true},"F17":{"original_rank":8,"new_rank":8,"rank_change":0,"stable":true},"F04":{"original_rank":9,"new_rank":9,"rank_change":0,"stable":true},"F05":{"original_rank":10,"new_rank":10,"rank_change":0,"stable":true},"F18":{"original_rank":11,"new_rank":11,"rank_change":0,"stable":true},"F09":{"original_rank":12,"new_rank":12,"rank_change":0,"stable":true},"F10":{"original_rank":13,"new_rank":13,"rank_change":0,"stable":true},"F11":{"original_rank":14,"new_rank":14,"rank_change":0,"stable":true},"F08":{"original_rank":15,"new_rank":15,"rank_change":0,"stable":true},"F12":{"original_rank":16,"new_rank":16,"rank_change":0,"stable":true},"F13":{"original_rank":17,"new_rank":17,"rank_change":0,"stable":true},"F15":{"original_rank":18,"new_rank":18,"rank_change":0,"stable":true}},"top3":[{"id":"F01","rank":1},{"id":"F16","rank":2},{"id":"F02","rank":3}]}}]},"timestamp":"2026-04-20T21:50:59.409084"}};
+
+        // Navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stats
+            document.getElementById('stat-experts').textContent = reportData.experts.length;
+            document.getElementById('stat-criteria').textContent = reportData.criteria.length;
+            document.getElementById('stat-factors').textContent = reportData.alternatives.length;
+
+            // CR value
+            const ahpCons = reportData.convergence_data?.ahp_consistency;
+            if (ahpCons) {
+                const crEl = document.getElementById('stat-cr');
+                crEl.textContent = ahpCons.cr.toFixed(4);
+                const badge = document.getElementById('cr-badge');
+                if (!ahpCons.passed) {
+                    badge.className = 'badge badge-danger';
+                    badge.textContent = 'CR > 0.10';
+                }
+            }
+
+            // Top 5 Ranking
+            const top5List = document.getElementById('top5-list');
+            reportData.sorted_alts.slice(0, 5).forEach((alt, i) => {
+                const altWeight = reportData.ranking.find(r => r.id === alt.id);
+                const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-default';
+                top5List.innerHTML += `
+                    <li class="ranking-item">
+                        <span class="rank-badge ${rankClass}">${i + 1}</span>
+                        <div class="ranking-content">
+                            <div class="ranking-name">${alt.name}</div>
+                            <div class="ranking-meta">${reportData.criteria_map?.[alt.belongs_to_criteria] || alt.belongs_to_criteria || ''}</div>
+                        </div>
+                        <span class="ranking-score">${(altWeight?.weight * 100 || 0).toFixed(2)}%</span>
+                    </li>
+                `;
+            });
+
+            // Criteria Bars
+            const criteriaBars = document.getElementById('criteria-bars');
+            reportData.criteria_weights?.forEach(c => {
+                criteriaBars.innerHTML += `
+                    <div class="criteria-bar">
+                        <div class="criteria-label">
+                            <span>${c.name}</span>
+                            <span>${(c.weight * 100).toFixed(1)}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${c.weight * 100}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Criteria Table
+            const criteriaTableBody = document.getElementById('criteria-table-body');
+            reportData.criteria_weights?.forEach(c => {
+                criteriaTableBody.innerHTML += `
+                    <tr>
+                        <td>${c.id}</td>
+                        <td>${c.name}</td>
+                        <td>${c.weight.toFixed(4)}</td>
+                        <td>${(c.lambda_max || 0).toFixed(4)}</td>
+                        <td>${(c.ci || 0).toFixed(4)}</td>
+                        <td>${(c.cr || 0).toFixed(4)} ${c.consistency_passed ? '✓' : '✗'}</td>
+                    </tr>
+                `;
+            });
+
+            // Full Ranking List
+            const fullRankingList = document.getElementById('full-ranking-list');
+            reportData.sorted_alts.forEach((alt, i) => {
+                const altWeight = reportData.ranking.find(r => r.id === alt.id);
+                const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-default';
+                fullRankingList.innerHTML += `
+                    <li class="ranking-item">
+                        <span class="rank-badge ${rankClass}">${i + 1}</span>
+                        <div class="ranking-content">
+                            <div class="ranking-name">${alt.name}</div>
+                            <div class="ranking-meta">${reportData.criteria_map?.[alt.belongs_to_criteria] || alt.belongs_to_criteria || ''} | 原始得分: ${(alt.raw_score || 0).toFixed(2)}</div>
+                        </div>
+                        <span class="ranking-score">${(altWeight?.weight * 100 || 0).toFixed(2)}%</span>
+                    </li>
+                `;
+            });
+
+            // Weight Distribution
+            const weightDist = document.getElementById('weight-distribution');
+            reportData.sorted_alts.slice(0, 10).forEach((alt, i) => {
+                const altWeight = reportData.ranking.find(r => r.id === alt.id);
+                const weight = altWeight?.weight || 0;
+                weightDist.innerHTML += `
+                    <div class="criteria-bar">
+                        <div class="criteria-label">
+                            <span>${i + 1}. ${alt.name}</span>
+                            <span>${(weight * 100).toFixed(2)}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${weight * 100 * 3}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Convergence
+            const convSummary = document.getElementById('convergence-summary');
+            const convData = reportData.convergence_data;
+            if (convData && convData.factor_results) {
+                const total = convData.total_factors || Object.keys(convData.factor_results).length;
+                const converged = convData.converged_count || 0;
+                convSummary.innerHTML = `
+                    <div class="grid-2">
+                        <div class="stat-card">
+                            <div class="stat-value">${converged}/${total}</div>
+                            <div class="stat-label">已收敛因素</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${(converged / total * 100).toFixed(0)}%</div>
+                            <div class="stat-label">收敛率</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const convTableBody = document.getElementById('convergence-table-body');
+            if (convData && convData.factor_results) {
+                Object.entries(convData.factor_results).forEach(([fid, result]) => {
+                    const statusClass = result.converged ? 'badge-success' : 'badge-danger';
+                    const statusText = result.converged ? '已收敛' : '未收敛';
+                    convTableBody.innerHTML += `
+                        <tr>
+                            <td>${fid}</td>
+                            <td>${(result.mean || 0).toFixed(2)}</td>
+                            <td>${(result.std_dev || 0).toFixed(2)}</td>
+                            <td>${(result.cv_percent || 0).toFixed(2)}%</td>
+                            <td>${result.agreement || '-'}</td>
+                            <td><span class="badge ${statusClass}">${statusText}</span></td>
+                        </tr>
+                    `;
+                });
+            }
+
+            // Sensitivity
+            const sensSummary = document.getElementById('sensitivity-summary');
+            if (reportData.sensitivity_data) {
+                const critSens = reportData.sensitivity_data.criteria_sensitivity;
+                const scoreSens = reportData.sensitivity_data.score_sensitivity;
+
+                let stableCount = 0;
+                let totalCount = 0;
+
+                critSens?.scenarios?.forEach(s => {
+                    totalCount += 2;
+                    const upStable = Object.values(s.increase_scenario?.ranking_changes || {}).every(c => c.stable);
+                    const downStable = Object.values(s.decrease_scenario?.ranking_changes || {}).every(c => c.stable);
+                    if (upStable && downStable) stableCount++;
+                });
+
+                scoreSens?.scenarios?.forEach(s => {
+                    totalCount += 2;
+                    const upStable = Object.values(s.increase_scenario?.ranking_changes || {}).every(c => c.stable);
+                    const downStable = Object.values(s.decrease_scenario?.ranking_changes || {}).every(c => c.stable);
+                    if (upStable && downStable) stableCount++;
+                });
+
+                const stablePct = totalCount > 0 ? (stableCount / totalCount * 100).toFixed(0) : 0;
+                const stability = stablePct >= 80 ? '高' : stablePct >= 50 ? '中' : '低';
+
+                sensSummary.innerHTML = `
+                    <div class="grid-2">
+                        <div class="stat-card">
+                            <div class="stat-value">${stableCount}/${totalCount}</div>
+                            <div class="stat-label">稳定场景</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${stablePct}%</div>
+                            <div class="stat-label">稳健性</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; color: var(--text-secondary);">
+                        稳健性${stability}：${stablePct}% 的场景在参数变化 &plusmn;10% 时排名保持稳定
+                    </p>
+                `;
+            }
+
+            // Experts
+            const expertList = document.getElementById('expert-list');
+            reportData.experts?.forEach(exp => {
+                const initials = exp.name?.slice(0, 1) || '?';
+                expertList.innerHTML += `
+                    <div class="expert-card">
+                        <div class="expert-avatar">${initials}</div>
+                        <div class="expert-info">
+                            <div class="expert-name">${exp.name}</div>
+                            <div class="expert-role">${exp.role} | ${exp.org_type} | ${exp.expertise}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>

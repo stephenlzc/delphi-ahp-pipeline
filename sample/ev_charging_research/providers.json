@@ -1,0 +1,63 @@
+{
+  "deepseek_cn": {
+    "key": "deepseek_cn",
+    "name": "DeepSeek (国内)",
+    "adapter": "openai_chat_compatible",
+    "base_url": "https://api.******.ai/v1",
+    "api_key": "sk-12**••••",
+    "default_model": "llmmodels",
+    "models": [
+      "llmmodels"
+    ],
+    "model_capabilities": {
+      "deepseek-chat": 8192,
+      "deepseek-reasoner": 8192
+    }
+  },
+  "moonshot_cn": {
+    "key": "moonshot_cn",
+    "name": "Moonshot / Kimi (国内)",
+    "adapter": "openai_chat_compatible",
+    "base_url": "https://api.******.ai/v1",
+    "api_key": "sk-••••••••••••••••••••••",
+    "default_model": "llmmodels",
+    "models": [
+      "llmmodels"
+    ],
+    "model_capabilities": {
+      "kimi-k2-turbo-preview": 8192,
+      "moonshot-v1-8k": 8192,
+      "kimi-k2.5": 0
+    }
+  },
+  "custom_1": {
+    "key": "custom_1",
+    "name": "自定义服务商 1",
+    "adapter": "openai_chat_compatible",
+    "base_url": "https://api.******.ai/v1",
+    "api_key": "sk-12**••••",
+    "default_model": "llmmodels",
+    "models": [
+      "llmmodels"
+    ],
+    "model_capabilities": {
+      "claude-sonnet-4-5": 8192,
+      "gemini-3-flash": 8192
+    }
+  },
+  "siliconflow": {
+    "key": "siliconflow",
+    "name": "SiliconFlow",
+    "adapter": "openai_chat_compatible",
+    "base_url": "https://api.******.ai/v1",
+    "api_key": "sk-12**••••",
+    "default_model": "llmmodels",
+    "models": [
+      "llmmodels"
+    ],
+    "model_capabilities": {
+      "Pro/zai-org/GLM-5.1": 8192,
+      "Pro/MiniMaxAI/MiniMax-M2.5": 8192
+    }
+  }
+}
