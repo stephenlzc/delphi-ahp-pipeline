@@ -2172,7 +2172,6 @@ def run_step8(state: dict) -> dict:
     dest_report = dest_dir / f"report_{run_id}.md"
     dest_summary = dest_dir / f"summary_{run_id}.md"
     dest_html = dest_dir / f"interactive_report_{run_id}.html"
-    dest_xlsx = dest_dir / "analysis_tables.xlsx"
     dest_zip = dest_dir / zip_path.name
 
     try:
@@ -2182,9 +2181,6 @@ def run_step8(state: dict) -> dict:
         print(f"  [已复制] {dest_summary}")
         shutil.copy(html_path, dest_html)
         print(f"  [已复制] {dest_html}")
-        if xlsx_path.exists():
-            shutil.copy(xlsx_path, dest_xlsx)
-            print(f"  [已复制] {dest_xlsx}")
         shutil.copy(zip_path, dest_zip)
         print(f"  [已复制] {dest_zip}")
     except Exception as e:

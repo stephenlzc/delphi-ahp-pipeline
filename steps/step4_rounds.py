@@ -4,8 +4,9 @@ Step 4: Rounds Configuration & Interview Framework
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Tuple
 import questionary
 from models import RoundsConfig, ScoringDimension, Expert
 from steps.colors import (
@@ -13,6 +14,134 @@ from steps.colors import (
     bright_red, bright_green, bright_yellow, bright_blue, bright_magenta, bright_cyan
 )
 
+
+# ============================================================================
+# JSONL 增量备份机制 - 5个工具函数
+# ============================================================================
+
+def _append_to_jsonl(jsonl_path: Path, data: dict) -> None:
+    """
+    追加单条记录到 JSONL，写入后 fsync 确保落盘。
+
+    Args:
+        jsonl_path: JSONL 文件路径
+        data: 要写入的数据字典
+    """
+    jsonl_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(jsonl_path, 'a', encoding='utf-8') as f:
+        f.write(json.dumps(data, ensure_ascii=False) + '\n')
+        f.flush()
+        os.fsync(f.fileno())
+
+
+def _check_jsonl_status(jsonl_path: Path) -> dict:
+    """
+    检查 JSONL 状态，返回状态信息。
+
+    Returns:
+        dict: {
+            'exists': bool,      # 文件是否存在
+            'turns': int,       # 已完成的 turn 数量
+            'last_turn': dict,   # 最后一条记录
+            'is_complete': bool  # 是否已完成（最后一条 is_closing=True 或 status=completed）
+        }
+    """
+    if not jsonl_path.exists():
+        return {'exists': False, 'turns': 0, 'last_turn': None, 'is_complete': False}
+
+    records = _load_records_from_jsonl(jsonl_path)
+    if not records:
+        return {'exists': True, 'turns': 0, 'last_turn': None, 'is_complete': False}
+
+    turns = len(records)
+    last_turn = records[-1] if records else None
+
+    # 判断是否完成：最后一个 turn 的 is_closing=True
+    is_complete = last_turn.get('is_closing', False) if last_turn else False
+
+    return {
+        'exists': True,
+        'turns': turns,
+        'last_turn': last_turn,
+        'is_complete': is_complete
+    }
+
+
+def _load_records_from_jsonl(jsonl_path: Path) -> list:
+    """
+    从 JSONL 恢复已完成的 turns，跳过解析失败行。
+
+    Args:
+        jsonl_path: JSONL 文件路径
+
+    Returns:
+        list: 解析成功的记录列表
+    """
+    records = []
+    if not jsonl_path.exists():
+        return records
+
+    with open(jsonl_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue  # 跳过损坏行
+    return records
+
+
+def _cleanup_jsonl(jsonl_path: Path) -> None:
+    """
+    访谈完成后删除 JSONL（数据已转换到 interview_records.json）。
+
+    Args:
+        jsonl_path: JSONL 文件路径
+    """
+    if jsonl_path.exists():
+        jsonl_path.unlink()
+
+
+def _recover_conversation_from_jsonl(jsonl_path: Path) -> Tuple[list, list, int]:
+    """
+    从 JSONL 恢复 conversation_history 和 qa_pairs。
+
+    Args:
+        jsonl_path: JSONL 文件路径
+
+    Returns:
+        Tuple[list, list, int]:
+            - conversation_history: 用于 LLM 对话的上下文
+            - qa_pairs: 完整的问答对列表
+            - last_turn_number: 最后一个 turn 的编号
+    """
+    records = _load_records_from_jsonl(jsonl_path)
+
+    if not records:
+        return [], [], 0
+
+    # 构建 conversation_history（用于 LLM 对话）
+    conversation_history = []
+    for r in records:
+        conversation_history.append({
+            'question': r.get('question', ''),
+            'answer': r.get('answer', ''),
+            'topic': r.get('topic', '')
+        })
+
+    # qa_pairs 保持原样
+    qa_pairs = records.copy()
+
+    last_turn_number = records[-1].get('turn', 0) if records else 0
+
+    return conversation_history, qa_pairs, last_turn_number
+
+
+# ============================================================================
+# 原有函数
+# ============================================================================
 
 def interactive_select(title: str, items: List[str], multi_select: bool = False) -> List[int]:
     """
@@ -547,7 +676,9 @@ def conduct_interview_with_expert(
     providers: dict,
     max_turns: int = 20,
     min_follow_ups_per_topic: int = 3,
-    max_follow_ups_per_topic: int = 8
+    max_follow_ups_per_topic: int = 8,
+    jsonl_path: Path = None,
+    resume_turn: int = 0
 ) -> dict:
     """
     Conduct dynamic LLM-driven multi-turn interview with a single expert.
@@ -562,6 +693,8 @@ def conduct_interview_with_expert(
         max_turns: Maximum total conversation turns (default: 20)
         min_follow_ups_per_topic: Minimum follow-ups per topic before LLM can switch (default: 3)
         max_follow_ups_per_topic: Maximum follow-ups per topic (default: 8)
+        jsonl_path: Path for JSONL incremental backup (optional)
+        resume_turn: Resume from this turn number (0 = start fresh)
 
     Returns:
         dict with interview record
@@ -579,8 +712,17 @@ def conduct_interview_with_expert(
     framework_topics = _extract_framework_topics(interview_framework)
     dimensions = interview_framework.get("dimensions", [])
 
-    conversation_history = []
-    all_qa_pairs = []
+    # 断点续传：从 JSONL 恢复已完成的对话
+    if resume_turn > 0 and jsonl_path:
+        conversation_history, all_qa_pairs, last_turn = _recover_conversation_from_jsonl(jsonl_path)
+        print(f"\n  {Colors.GREEN}[Resume] 已恢复 {len(all_qa_pairs)} 个已完成的对轮{Colors.RESET}")
+        # 从断点后继续
+        turn_counter = last_turn
+    else:
+        conversation_history = []
+        all_qa_pairs = []
+        turn_counter = 0
+
     current_topic = "开场介绍"
     topic_turn_count = 0
     topics_covered = []
@@ -589,6 +731,8 @@ def conduct_interview_with_expert(
     print(f"  Starting interview with expert {expert.name}...")
     print(f"  Using model: {expert.model}")
     print(f"  Max conversation turns: {max_turns}")
+    if resume_turn > 0:
+        print(f"  Resuming from turn {resume_turn + 1}")
     print(f"{'='*50}")
 
     try:
@@ -726,6 +870,10 @@ def conduct_interview_with_expert(
                 "topics_covered": topics_covered.copy()
             }
             all_qa_pairs.append(qa_pair)
+
+            # 增量保存：每个 turn 完成后立即写入 JSONL
+            if jsonl_path:
+                _append_to_jsonl(jsonl_path, qa_pair)
 
             # Add to conversation history
             conversation_history.append({
@@ -1797,11 +1945,33 @@ def run_step4(state: dict) -> dict:
 
     interview_records = []
 
+    # 生成时间戳用于 JSONL 文件命名
+    from datetime import datetime
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
     for expert in experts:
         print(f"\n{'='*60}")
         print(f"  Interviewing expert: {expert.name}")
         print(f"  Organization: {expert.org_type} | Expertise: {expert.expertise}")
         print(f"{'='*60}")
+
+        # 检查 JSONL 增量备份状态
+        jsonl_path = run_dir / f"{expert.id}_interview_{timestamp}.jsonl"
+        status = _check_jsonl_status(jsonl_path)
+        resume_turn = 0
+
+        if status['exists'] and not status['is_complete']:
+            print(f"\n  {Colors.YELLOW}[Warning] 检测到专家 {expert.name} 存在未完成的访谈记录{Colors.RESET}")
+            print(f"  已完成 {status['turns']} 个对话轮次")
+            choice = questionary.select(
+                "请选择操作",
+                choices=["继续未完成的访谈", "重新开始（删除旧记录）"]
+            ).ask()
+            if choice == "继续未完成的访谈":
+                resume_turn = status['turns']
+            else:
+                _cleanup_jsonl(jsonl_path)
+                resume_turn = 0
 
         record = conduct_interview_with_expert(
             project=project,
@@ -1811,15 +1981,17 @@ def run_step4(state: dict) -> dict:
             max_turns=max_turns,
             min_follow_ups_per_topic=min_follow_ups,
             max_follow_ups_per_topic=max_follow_ups,
+            jsonl_path=jsonl_path,
+            resume_turn=resume_turn,
         )
         interview_records.append(record)
+
+        # 访谈完成后清理 JSONL（数据已转换到 interview_records.json）
+        _cleanup_jsonl(jsonl_path)
 
         print(f"  [Complete] Expert {expert.name} interview completed")
 
     # Generate and save individual expert dialogue records
-    from datetime import datetime
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
     run_dir = Path(state.get("run_dir", Path(__file__).parent.parent / "run_result" / state.get("run_id", "")))
     # Save raw interview records as JSON
     save_json(run_dir / "interview_records.json", {
